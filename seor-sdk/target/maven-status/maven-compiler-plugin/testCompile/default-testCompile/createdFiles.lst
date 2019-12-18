@@ -1,0 +1,13 @@
+com/omor/digital/sdk/TestUtils$DynamodbEventMixin$RecordMixin.class
+com/omor/digital/sdk/TestUtils$DynamodbEventMixin$StreamRecordMixin.class
+com/omor/digital/sdk/TestUtils$1.class
+com/omor/digital/sdk/TestUtils$UpperCaseRecordsPropertyNamingStrategy.class
+com/omor/digital/sdk/TestUtils$DateTimeSerializer.class
+com/omor/digital/sdk/TestUtils$DateTimeDeserializer.class
+com/omor/digital/sdk/TestUtils.class
+com/omor/digital/sdk/TestUtils$TestJacksonMapperModule.class
+com/omor/digital/sdk/TestUtils$DynamodbEventMixin$AttributeValueMixIn.class
+com/omor/digital/sdk/TestContext$TestLogger.class
+com/omor/digital/sdk/TestUtils$DynamodbEventMixin.class
+com/omor/digital/sdk/TestContext$1.class
+com/omor/digital/sdk/TestContext.class

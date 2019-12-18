@@ -1,0 +1,63 @@
+package com.omor.digital.base.api;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.amazonaws.serverless.exceptions.ContainerInitializationException;
+import com.amazonaws.serverless.proxy.model.AwsProxyRequest;
+import com.amazonaws.serverless.proxy.model.AwsProxyResponse;
+import com.amazonaws.serverless.proxy.spark.SparkLambdaContainerHandler;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
+
+import spark.Spark;
+
+import static spark.Spark.before;
+import static spark.Spark.get;
+
+
+public class RequestStreamLambdaHandler implements RequestStreamHandler {
+
+	private static SparkLambdaContainerHandler<AwsProxyRequest, AwsProxyResponse> handler;
+	private static final Logger logger = LoggerFactory.getLogger(RequestStreamLambdaHandler.class);
+	static {
+		try {
+			handler = SparkLambdaContainerHandler.getAwsProxyHandler();
+			defineBaseResources();
+			Spark.awaitInitialization();
+		} catch (ContainerInitializationException e) {
+			System.out.println("Cannot initialize Spark application");
+		}
+	}
+
+	@Override
+	public void handleRequest(InputStream input, OutputStream output, Context context) throws IOException {
+
+		handler.proxyStream(input, output, context);
+	}
+
+	public static void defineBaseResources() {
+		before("/*", (req, res) -> {
+			res.type("application/json");
+			res.header("access-control-allow-headers",
+					"Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token");
+			res.header("access-control-allow-methods", "POST,GET,PUT,DELETE,OPTIONS");
+			res.header("access-control-allow-origin", "*");
+		});
+
+		get("/urlone", (req, res) -> {
+			res.status(200);
+			return "{ \"color\" : \"Black\", \"type\" : \"BMWWWWWWW\" }";
+		});
+		get("/urltwo", (req, res) -> {
+			res.status(200);
+			return "{ \"color\" : \"Black\", \"type\" : \"LAMBO\" }";
+		});
+
+	}
+
+}

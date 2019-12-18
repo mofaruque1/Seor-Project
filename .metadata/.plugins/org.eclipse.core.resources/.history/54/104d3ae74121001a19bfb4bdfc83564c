@@ -1,0 +1,36 @@
+package com.omor.digital.sdk;
+
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+
+public class SEORClient {
+
+	private static SEORClient single_instance = null;
+	private String awsRegion = "ca-central-1";
+	private String awsCredentialsProfileName = null;
+	private AmazonDynamoDB dynamoDB = null;
+
+	public SEORClient() {
+	}
+
+	public SEORClient getInstance() {
+		if (single_instance == null) {
+			single_instance = new SEORClient();
+			initialize();
+
+		}
+		return single_instance;
+	}
+
+	private void initialize() {
+		this.dynamoDB = AmazonDynamoDBClientBuilder.standard().build();
+	}
+
+	/**
+	 * @return the dynamoDB
+	 */
+	public AmazonDynamoDB getDynamoDB() {
+		return dynamoDB;
+	}
+
+}

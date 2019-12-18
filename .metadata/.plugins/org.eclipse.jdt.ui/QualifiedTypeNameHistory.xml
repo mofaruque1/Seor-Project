@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute"/>
+<fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.AmazonDynamoDB"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper"/>
+<fullyQualifiedTypeName name="com.amazonaws.lambda.authentication.User"/>
+<fullyQualifiedTypeName name="com.amazonaws.serverless.proxy.model.AwsProxyRequest"/>
+<fullyQualifiedTypeName name="com.amazonaws.serverless.proxy.model.AwsProxyResponse"/>
+<fullyQualifiedTypeName name="com.amazonaws.serverless.proxy.spark.SparkLambdaContainerHandler"/>
+<fullyQualifiedTypeName name="spark.Spark"/>
+<fullyQualifiedTypeName name="com.amazonaws.serverless.exceptions.ContainerInitializationException"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="spark.Request"/>
+<fullyQualifiedTypeName name="javax.xml.ws.RespectBinding"/>
+<fullyQualifiedTypeName name="spark.Response"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.module.afterburner.AfterburnerModule"/>
+<fullyQualifiedTypeName name="com.omor.digital.base.api.RequestStreamLambdaHandler"/>
+<fullyQualifiedTypeName name="java.util.logging.LogManager"/>
+<fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="spark.ResponseTransformer"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.core.JsonProcessingException"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.omor.digital.base.api.model.ErrorResponse"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="com.omor.digital.base.api.JsonTransformer"/>
+<fullyQualifiedTypeName name="com.omor.digital.base.api.exception.NotFoundException"/>
+</qualifiedTypeNameHistroy>

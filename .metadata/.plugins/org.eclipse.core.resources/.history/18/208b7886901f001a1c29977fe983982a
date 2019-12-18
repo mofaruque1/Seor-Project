@@ -1,0 +1,15 @@
+package com.omor.digital.auth.api;
+
+import com.omor.digital.base.api.RequestStreamLambdaHandler;
+
+public class AuthenticationLambdaHandler extends RequestStreamLambdaHandler {
+
+	@Override
+	public void defineResources() {
+		// TODO Auto-generated method stub
+		
+	}
+
+   
+
+}

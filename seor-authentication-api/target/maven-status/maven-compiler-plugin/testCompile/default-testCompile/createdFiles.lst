@@ -1,0 +1,14 @@
+com/omor/digital/auth/api/AuthenticationLambdaHandlerTest.class
+com/omor/digital/auth/api/TestUtils$DateTimeSerializer.class
+com/omor/digital/auth/api/TestUtils$DynamodbEventMixin$RecordMixin.class
+com/omor/digital/auth/api/TestContext.class
+com/omor/digital/auth/api/TestUtils$UpperCaseRecordsPropertyNamingStrategy.class
+com/omor/digital/auth/api/TestUtils$DynamodbEventMixin$AttributeValueMixIn.class
+com/omor/digital/auth/api/TestUtils$DynamodbEventMixin$StreamRecordMixin.class
+com/omor/digital/auth/api/TestUtils$TestJacksonMapperModule.class
+com/omor/digital/auth/api/TestUtils.class
+com/omor/digital/auth/api/TestUtils$DateTimeDeserializer.class
+com/omor/digital/auth/api/TestUtils$DynamodbEventMixin.class
+com/omor/digital/auth/api/TestContext$TestLogger.class
+com/omor/digital/auth/api/TestContext$1.class
+com/omor/digital/auth/api/TestUtils$1.class
