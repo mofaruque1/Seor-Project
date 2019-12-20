@@ -13,7 +13,7 @@ public class CustomerSDK {
 	private DynamoDBMapper mapper = null;
 
 	public CustomerSDK(SEORClient client) {
-		
+
 		Utils.throwIfNullObject(client, "SEORClient object cannot be null [CustomerSDK.java]");
 		this.client = client;
 		this.dynamoDB = this.client.getDynamoDB();
@@ -21,14 +21,22 @@ public class CustomerSDK {
 		mapper = new DynamoDBMapper(this.dynamoDB);
 
 	}
-	
+
 	public boolean registerNewCustomer(User user) {
-		User existingUser = mapper.load(User.class,user.getEmail());
-		if(Utils.checkIfNullObject(existingUser)) {
+		User existingUser = mapper.load(User.class, user.getEmail());
+		if (Utils.checkIfNullObject(existingUser)) {
 			mapper.save(user);
 			return true;
 		}
 		return false;
+	}
+	
+	public User signinCustomer(String email, String password) {
+		User existingUser = mapper.load(User.class, email);
+		if (!Utils.checkIfNullObject(existingUser) && existingUser.getPassword().contentEquals(password)) {
+			return existingUser;
+		}
+		return null;
 	}
 
 	public SEORClient getClient() {

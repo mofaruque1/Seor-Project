@@ -3,6 +3,10 @@ echo " *** Building the base api *** "
 cd ../seor-base-api
 mvn clean install -DskipTests
 
+echo " *** Building the SDK *** "
+cd ../seor-sdk
+mvn clean install -DskipTests
+
 echo " *** Building the auth api *** "
 cd ../seor-authentication-api
 mvn clean install -DskipTests

@@ -1,3 +1,6 @@
 /Users/mdomor.faruque/eclipse-workspace-2/seor-authentication-api/src/main/java/com/omor/digital/auth/api/AuthenticationLambdaHandler.java
+/Users/mdomor.faruque/eclipse-workspace-2/seor-authentication-api/src/main/java/com/omor/digital/auth/api/route/BaseRoute.java
+/Users/mdomor.faruque/eclipse-workspace-2/seor-authentication-api/src/main/java/com/omor/digital/auth/api/model/SigninRequest.java
 /Users/mdomor.faruque/eclipse-workspace-2/seor-authentication-api/src/main/java/com/omor/digital/auth/api/route/CustomerRegister.java
+/Users/mdomor.faruque/eclipse-workspace-2/seor-authentication-api/src/main/java/com/omor/digital/auth/api/route/CustomerSignin.java
 /Users/mdomor.faruque/eclipse-workspace-2/seor-authentication-api/src/main/java/com/omor/digital/auth/api/model/AuthResponse.java

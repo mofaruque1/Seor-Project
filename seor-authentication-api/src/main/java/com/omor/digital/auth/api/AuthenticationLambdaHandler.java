@@ -2,6 +2,7 @@ package com.omor.digital.auth.api;
 
 import com.omor.digital.auth.api.model.AuthResponse;
 import com.omor.digital.auth.api.route.CustomerRegister;
+import com.omor.digital.auth.api.route.CustomerSignin;
 import com.omor.digital.base.api.JsonTransformer;
 import com.omor.digital.base.api.RequestStreamLambdaHandler;
 import static spark.Spark.get;
@@ -17,9 +18,8 @@ public class AuthenticationLambdaHandler extends RequestStreamLambdaHandler {
 	@Override
 	public void defineResources() {
 		get("/urlone", (req, res) -> {
-
 			res.status(200);
-			return "{ \"color\" : \"Black\", \"type\" : \"BMWWW\" }";
+			return "{ \"type\" : \"TEST\" }";
 		});
 
 		post("/register", (req, res) -> {
@@ -28,8 +28,18 @@ public class AuthenticationLambdaHandler extends RequestStreamLambdaHandler {
 			return new JsonTransformer().render(response);
 
 		});
+		
+		post("/signin", (req, res) -> {
+
+			System.out.println("Sign in api is getting called");
+			AuthResponse response = new CustomerSignin().setupPostRoute(req, res);
+			return new JsonTransformer().render(response);
+
+		});
 
 	}
+	
+	
 
 
 }
