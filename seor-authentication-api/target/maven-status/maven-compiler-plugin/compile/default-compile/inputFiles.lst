@@ -1,2 +1,3 @@
 /Users/mdomor.faruque/eclipse-workspace-2/seor-authentication-api/src/main/java/com/omor/digital/auth/api/AuthenticationLambdaHandler.java
-/Users/mdomor.faruque/eclipse-workspace-2/seor-authentication-api/src/main/java/com/omor/digital/auth/api/model/User.java
+/Users/mdomor.faruque/eclipse-workspace-2/seor-authentication-api/src/main/java/com/omor/digital/auth/api/route/CustomerRegister.java
+/Users/mdomor.faruque/eclipse-workspace-2/seor-authentication-api/src/main/java/com/omor/digital/auth/api/model/AuthResponse.java

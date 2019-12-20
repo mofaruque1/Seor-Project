@@ -1,2 +1,3 @@
-com/omor/digital/auth/api/model/User.class
+com/omor/digital/auth/api/route/CustomerRegister.class
 com/omor/digital/auth/api/AuthenticationLambdaHandler.class
+com/omor/digital/auth/api/model/AuthResponse.class

@@ -13,6 +13,7 @@ import com.amazonaws.serverless.proxy.model.AwsProxyResponse;
 import com.amazonaws.serverless.proxy.spark.SparkLambdaContainerHandler;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
+import com.omor.digital.base.api.exception.CustomerExistException;
 import com.omor.digital.base.api.exception.NotFoundException;
 import com.omor.digital.base.api.model.ErrorResponse;
 
@@ -61,6 +62,7 @@ public abstract class RequestStreamLambdaHandler implements RequestStreamHandler
 
 		// Exception filters
 		exception(NotFoundException.class, this::setNotFoundExceptionFilter);
+		exception(CustomerExistException.class, this::setAlreadyExistExceptionFilter);
 		exception(Exception.class, this::setUnhandledExceptionFilter);
 
 	}
@@ -86,6 +88,13 @@ public abstract class RequestStreamLambdaHandler implements RequestStreamHandler
 
 	protected void setNotFoundExceptionFilter(NotFoundException exception, Request req, Response res) {
 		logger.error("Not found exception", exception);
+		ErrorResponse err = new ErrorResponse(404, exception);
+		res.status(404);
+		res.body(new JsonTransformer().render(err));
+	}
+
+	protected void setAlreadyExistExceptionFilter(CustomerExistException exception, Request req, Response res) {
+		logger.error("Customer exist exception", exception);
 		ErrorResponse err = new ErrorResponse(404, exception);
 		res.status(404);
 		res.body(new JsonTransformer().render(err));
