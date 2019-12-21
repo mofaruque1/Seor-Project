@@ -10,33 +10,42 @@ public class CustomerSDK {
 	private SEORClient client = null;
 	private AmazonDynamoDB dynamoDB = null;
 	private User user = null;
-	private DynamoDBMapper mapper = null;
+	private DynamoDBMapper ddbTableMapper = null;
 
-	public CustomerSDK(SEORClient client) {
+	
 
-		Utils.throwIfNullObject(client, "SEORClient object cannot be null [CustomerSDK.java]");
-		this.client = client;
+	public CustomerSDK() {
+		this.client = getSeorClient();
+		Utils.throwIfNullObject(this.client, "SEORClient object cannot be null [CustomerSDK.java]");
 		this.dynamoDB = this.client.getDynamoDB();
 		Utils.throwIfNullObject(this.dynamoDB, "AmazonDynamoDB reference object cannot be NULL! [CustomerSDK.java]");
-		mapper = new DynamoDBMapper(this.dynamoDB);
+		ddbTableMapper = new DynamoDBMapper(this.dynamoDB);
 
 	}
 
 	public boolean registerNewCustomer(User user) {
-		User existingUser = mapper.load(User.class, user.getEmail());
+		User existingUser = ddbTableMapper.load(User.class, user.getEmail());
 		if (Utils.checkIfNullObject(existingUser)) {
-			mapper.save(user);
+			ddbTableMapper.save(user);
 			return true;
 		}
 		return false;
 	}
 	
 	public User signinCustomer(String email, String password) {
-		User existingUser = mapper.load(User.class, email);
+		User existingUser = ddbTableMapper.load(User.class, email);
 		if (!Utils.checkIfNullObject(existingUser) && existingUser.getPassword().contentEquals(password)) {
 			return existingUser;
 		}
 		return null;
+	}
+	
+	public DynamoDBMapper getMapper() {
+		return ddbTableMapper;
+	}
+	
+	private SEORClient getSeorClient() {
+		return new SEORClient.Builder().build();
 	}
 
 	public SEORClient getClient() {

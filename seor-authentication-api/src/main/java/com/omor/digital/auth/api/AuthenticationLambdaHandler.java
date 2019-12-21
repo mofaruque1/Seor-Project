@@ -17,20 +17,17 @@ public class AuthenticationLambdaHandler extends RequestStreamLambdaHandler {
 
 	@Override
 	public void defineResources() {
-		get("/urlone", (req, res) -> {
+		get("/apiinfo", (req, res) -> {
 			res.status(200);
-			return "{ \"type\" : \"TEST\" }";
+			return "{ \"Api Name\" : \"Authentication Api\" }";
 		});
 
 		post("/register", (req, res) -> {
-
 			AuthResponse response = new CustomerRegister().setupPostRoute(req, res);
 			return new JsonTransformer().render(response);
-
 		});
-		
-		post("/signin", (req, res) -> {
 
+		post("/signin", (req, res) -> {
 			System.out.println("Sign in api is getting called");
 			AuthResponse response = new CustomerSignin().setupPostRoute(req, res);
 			return new JsonTransformer().render(response);
@@ -38,8 +35,7 @@ public class AuthenticationLambdaHandler extends RequestStreamLambdaHandler {
 		});
 
 	}
-	
-	
 
+	
 
 }

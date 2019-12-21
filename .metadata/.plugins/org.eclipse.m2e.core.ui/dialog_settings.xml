@@ -31,6 +31,7 @@
 			<item value="com.omor.eclipsetest"/>
 		</list>
 		<list key="artifactId">
+			<item value="data-transformer"/>
 			<item value="omor-eclipse-test"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -42,6 +43,7 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
 			<item value="1.0"/>
 		</list>
 	</section>
