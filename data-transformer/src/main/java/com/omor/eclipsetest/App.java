@@ -45,55 +45,12 @@ public class App {
 		ProductDetailsV2 productDetails = mapper.readValue(dataNode.toString(), ProductDetailsV2.class);
 		productDetails.setCreation_timestamp(new Date().toString());
 
-
-
-		//storeInDynamo(product);
+		//objectToJson(productDetails);
 		storeInDynamoWithArrayList(productDetails);
 
-		 //objectToJson(productDetails);
-
 	}
 
-	public static void storeInDynamo(Product product) {
-		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
-		DynamoDBMapper ddbMapper = new DynamoDBMapper(client);
 
-		try {
-			System.out.println("Inserting in dynamo db");
-			ddbMapper.save(product);
-			System.out.println("Insertion complete");
-		} catch (Exception e) {
-			System.out.println("Something went wrong :(" + e);
-		}
-	}
-
-	public static void storeWithoutMapper(String jsonString) {
-		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
-		DynamoDB dynamoDB = new DynamoDB(client);
-
-		Table table = dynamoDB.getTable("trt-mac-products");
-		Item item = new Item()
-				      .withPrimaryKey("productType", "assorted")
-				      .withJSON("document", jsonString);
-		
-		try {
-			System.out.println("Inserting in dynamo db");
-			table.putItem(item);
-			System.out.println("Insertion complete");
-		} catch (Exception e) {
-			System.out.println("Something went wrong :(" + e);
-		}
-
-	}
-
-	public static void objectToJson(ProductDetailsV2 details) throws JsonProcessingException {
-		ObjectMapper mapper2 = new ObjectMapper();
-		String jsonInString = mapper2.writeValueAsString(details);
-
-		System.out.println(jsonInString);
-
-	}
-	
 	public static void storeInDynamoWithArrayList(ProductDetailsV2 productDetails) {
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
 		DynamoDB dynamoDB = new DynamoDB(client);
@@ -101,8 +58,19 @@ public class App {
 		Table table = dynamoDB.getTable("trt-mac-products");
 		Item item = new Item()
 			      .withPrimaryKey("productType", "assorted")
-			      .withString("CreationTime", productDetails.getCreation_timestamp())
-			      .withStringSet("product_url", new HashSet<String>(productDetails.getProduct_url()));
+			      .withList("product_name", Arrays.asList(productDetails.getProduct_name()))
+			      .withList("product_price", Arrays.asList(productDetails.getProduct_price()))
+			      .withList("product_adjusted_price", Arrays.asList(productDetails.getProduct_adjusted_price()))
+			      .withList("product_price_converted_to_taka", Arrays.asList(productDetails.getproduct_price_converted_to_taka()))
+			      .withList("product_size", Arrays.asList(productDetails.getProduct_size()))
+			      .withList("product_category_name", Arrays.asList(productDetails.getProduct_category_name()))
+			      .withList("product_shade", Arrays.asList(productDetails.getProduct_shade()))
+			      .withList("product_url", Arrays.asList(productDetails.getProduct_url()))
+			      .withList("product_sku", Arrays.asList(productDetails.getProduct_sku()))
+			      .withList("product_short_desc", Arrays.asList(productDetails.getProduct_short_desc()))
+			      .withList("product_sku_small_image_url", Arrays.asList(productDetails.getProduct_sku_small_image_url()))
+			      .withList("product_large_image_url", Arrays.asList(productDetails.getProduct_large_image_url()))
+			      .withString("CreationTime", productDetails.getCreation_timestamp());
 		try {
 			System.out.println("Inserting in dynamo db");
 			table.putItem(item);
@@ -110,6 +78,16 @@ public class App {
 		} catch (Exception e) {
 			System.out.println("Something went wrong :(" + e);
 		}
+	}
+	
+	
+	
+	public static void objectToJson(ProductDetailsV2 details) throws JsonProcessingException {
+		ObjectMapper mapper2 = new ObjectMapper();
+		String jsonInString = mapper2.writeValueAsString(details);
+
+		System.out.println(jsonInString);
+
 	}
 
 }

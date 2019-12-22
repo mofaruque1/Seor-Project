@@ -1,10 +1,8 @@
-package com.omor.eclipsetest;
+package com.omor.digital.seor.etl.mac;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
-public class ProductDetailsV2 {
-
+public class ProductDetails {
 	private String creation_timestamp;
 	private String[] product_url;
 	private Double[] product_price;
@@ -151,5 +149,4 @@ public class ProductDetailsV2 {
 	public void setProduct_sku_small_image_url(String[] product_sku_small_image_url) {
 		this.product_sku_small_image_url = product_sku_small_image_url;
 	}
-	
 }
