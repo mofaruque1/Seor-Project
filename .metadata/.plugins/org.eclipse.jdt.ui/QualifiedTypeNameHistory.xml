@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.omor.digital.sdk.SEORClient.Builder"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.model.AttributeValue"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="com.omor.digital.sdk.CustomerSDK"/>
 <fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression"/>
@@ -11,7 +8,6 @@
 <fullyQualifiedTypeName name="com.omor.digital.base.api.JsonTransformer"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.core.JsonFactory"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.core.JsonToken"/>
-<fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.core.JsonParser"/>
 <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
 <fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
@@ -59,5 +55,9 @@
 <fullyQualifiedTypeName name="java.lang.Number"/>
 <fullyQualifiedTypeName name="software.amazon.ion.Decimal"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="com.omor.digital.seor.etl.mac.ProductDetails"/>
+<fullyQualifiedTypeName name="com.omor.digital.seor.etl.Utils"/>
+<fullyQualifiedTypeName name="com.omor.digital.seor.etl.mac.MacProductsLoader"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

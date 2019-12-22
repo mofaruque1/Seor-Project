@@ -59,7 +59,7 @@ public class MacProductsLoader {
 		try {
 			System.out.println("Inserting in dynamo db for : "+productType);
 			table.putItem(item);
-			System.out.println("Insertion complete for : "+productType);
+			System.out.println("Insertion complete for : "+productType+"\n");
 		} catch (Exception e) {
 			System.out.println("Something went wrong : " + e);
 		}

@@ -52,6 +52,15 @@ public class ProductDetails {
 	}
 
 	public void setProduct_name(String[] product_name) {
+		int length = product_name.length;
+		int index = -1;
+		
+		for (int i = 0; i < length; i++) {
+			index = product_name[i].indexOf('$');
+			if (index>0) {
+				product_name[i] = product_name[i].substring(0, index);
+			}
+		}
 		this.product_name = product_name;
 	}
 

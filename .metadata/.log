@@ -11501,3 +11501,25 @@ org.eclipse.core.runtime.CoreException: Launch configuration Product references 
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 !SUBENTRY 1 org.eclipse.jdt.launching 4 124 2019-12-21 20:43:49.776
 !MESSAGE Launch configuration Product references closed project data-transformer
+!SESSION 2019-12-21 23:41:26.927 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/mdomor.faruque/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/mdomor.faruque/.eclipse_keyring
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2019-12-21 23:41:41.181
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2019-12-21 23:41:41.738
+!MESSAGE Monitoring content of /Users/mdomor.faruque/.aws/credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2019-12-21 23:41:42.278
+!MESSAGE AWS toolkit core plugin initialized after 1099 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2019-12-21 23:41:42.403
+!MESSAGE Found valid identity id cache us-east-1:93d149ed-d97d-42a9-8e53-eb13ff9a8238
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-21 23:45:19.304
+!MESSAGE The POM for commons-logging:commons-logging:jar:1.2 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details

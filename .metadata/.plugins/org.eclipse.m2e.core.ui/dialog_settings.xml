@@ -25,12 +25,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.omor.digital.seor.etl"/>
 			<item value="com.omor.eclipsetest"/>
 		</list>
 		<list key="groupId">
+			<item value="com.omor.digital"/>
 			<item value="com.omor.eclipsetest"/>
 		</list>
 		<list key="artifactId">
+			<item value="seor-etl"/>
 			<item value="data-transformer"/>
 			<item value="omor-eclipse-test"/>
 		</list>
@@ -43,8 +46,8 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
-			<item value="0.0.1-SNAPSHOT"/>
 			<item value="1.0"/>
+			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
