@@ -48,10 +48,10 @@ public class OrderSubmit {
 		}
 
 		JsonNode productNode = null;
-		String orderNode = null;
+		JsonNode orderNode = null;
 		try {
 			productNode = new ObjectMapper().readTree(requestBody);
-			orderNode = productNode.get("order").toString();
+			orderNode = productNode.get("order");
 		} catch (Exception e) {
 			System.out.println("Error occured : " + e.getMessage());
 		}
@@ -61,11 +61,12 @@ public class OrderSubmit {
 		seorOrder.setDiscount_amount(request.getDiscount_amount());
 		seorOrder.setEmail(request.getEmail());
 		seorOrder.setOrder(orderNode);
-		seorOrder.setOrder_id(request.getEmail() + System.currentTimeMillis());
+		seorOrder.setOrder_id(request.getEmail());
 		seorOrder.setPhone(request.getPhone());
 		seorOrder.setShipping_address(request.getShipping_address());
 		seorOrder.setShipping_cost(request.getShipping_cost());
 		seorOrder.setTotal_product_cost(request.getTotal_product_cost());
+		
 		boolean orderSubmitted = productSDK.submitOrder(seorOrder);
 		
 		if (!orderSubmitted) {

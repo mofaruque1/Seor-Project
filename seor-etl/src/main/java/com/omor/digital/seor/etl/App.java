@@ -1,5 +1,9 @@
 package com.omor.digital.seor.etl;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 import com.omor.digital.seor.etl.mac.MacProductsLoader;
 
 /**
@@ -9,13 +13,22 @@ import com.omor.digital.seor.etl.mac.MacProductsLoader;
 public class App {
 	public static void main(String[] args) {
 		String baseFilePath = "/Users/mdomor.faruque/eclipse-workspace-2/data/mac/";
-		String[] filePath = { "assorted.txt", "lipsticks.txt", "lipgloss.txt", "powder.txt", "mascara.txt"};
-		String[] productType = { "assorted", "lipsticks", "lipgloss", "powder", "mascara" };
+
+		Map<String, String> pathAndType = new HashMap<String, String>();
+		pathAndType.put("assorted.txt", "assorted");
+		pathAndType.put("lipsticks.txt", "lipsticks");
+		pathAndType.put("lipgloss.txt", "lipgloss");
+		pathAndType.put("powder.txt", "powder");
+		pathAndType.put("mascara.txt", "mascara");
+		
+		Set<String> key = pathAndType.keySet();
+		
 
 		MacProductsLoader macProductsLoader = new MacProductsLoader("trt-mac-products");
 		try {
-			for (int i = 0; i < productType.length; i++) {
-				macProductsLoader.processMacProducts(baseFilePath+filePath[i], productType[i]);
+
+			for (String string : key) {
+				macProductsLoader.processMacProducts(baseFilePath+string,pathAndType.get(string));
 			}
 
 		} catch (Exception e) {

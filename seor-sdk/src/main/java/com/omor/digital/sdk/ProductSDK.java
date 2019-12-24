@@ -1,8 +1,19 @@
 package com.omor.digital.sdk;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
 import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.ItemCollection;
+import com.amazonaws.services.dynamodbv2.document.QueryOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.document.spec.QuerySpec;
+import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.omor.digital.sdk.model.MacProductDetails;
 import com.omor.digital.sdk.model.OrderStatus;
@@ -24,10 +35,43 @@ public class ProductSDK extends BaseSDK {
 		return productsDetails;
 	}
 
+	public List<SEOROrder> getPreviousOrders(String email) {
+		Table table = db.getTable("trt-customer-order");
+
+		
+			QuerySpec spec = new QuerySpec().withKeyConditionExpression("order_id = :email")
+					.withValueMap(new ValueMap().withString(":email", email));
+
+			ItemCollection<QueryOutcome> items = table.query(spec);
+			return processPrevOrderItem(items);
+	}
+	
+	private List<SEOROrder> processPrevOrderItem(ItemCollection<QueryOutcome> items) {
+		
+		Iterator<Item> iterator = items.iterator();
+		Item item = null;
+		List<SEOROrder> prevOrders = new ArrayList<SEOROrder>();
+		String itemString = null;
+		JsonNode itemNode = null;
+
+		while (iterator.hasNext()) {
+			item = iterator.next();
+			itemString = item.toJSONPretty();
+			SEOROrder tempSeorOrder = new SEOROrder().createObjectFromjsonString(itemString);
+			prevOrders.add(tempSeorOrder);
+		}
+		return prevOrders;
+		
+	}
+	
+	
+	
+	
+	
+
 	public boolean submitOrder(SEOROrder order) {
 		order.setStatus(OrderStatus.CUSTOMER_SUBMITTED.toString());
-		System.out.println("|-------------Submit order ProductSDK-------------|");
-
+		// DynamoDB db is coming from BaseSDK
 		Table table = db.getTable("trt-customer-order");
 		Item item = new Item().withPrimaryKey("order_id", order.getOrder_id())
 				.withString("customer_name", order.getCustomer_name())
@@ -36,7 +80,7 @@ public class ProductSDK extends BaseSDK {
 				.withDouble("total_product_cost", order.getTotal_product_cost())
 				.withDouble("discount_amount", order.getDiscount_amount())
 				.withDouble("shipping_cost", order.getShipping_cost()).withString("status", order.getStatus())
-				.withJSON("order", order.getOrder());
+				.withJSON("order", order.getOrder().toString());
 
 		try {
 			System.out.println("Inserting ORDER in dynamo db ");

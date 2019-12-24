@@ -5,11 +5,15 @@ import java.util.Date;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-@DynamoDBTable(tableName = "trt-customer-order")
+
 public class SEOROrder {
 
-	@DynamoDBAttribute(attributeName="customer_name")
+	@JsonProperty("customer_name")
 	public String getCustomer_name() {
 		return customer_name;
 	}
@@ -17,7 +21,7 @@ public class SEOROrder {
 		this.customer_name = customer_name;
 	}
 	
-	@DynamoDBAttribute(attributeName="shipping_address")
+	@JsonProperty("shipping_address")
 	public String getShipping_address() {
 		return shipping_address;
 	}
@@ -25,7 +29,7 @@ public class SEOROrder {
 		this.shipping_address = shipping_address;
 	}
 	
-	@DynamoDBAttribute(attributeName="email")
+	@JsonProperty("email")
 	public String getEmail() {
 		return email;
 	}
@@ -33,7 +37,7 @@ public class SEOROrder {
 		this.email = email;
 	}
 	
-	@DynamoDBHashKey(attributeName="order_id")
+	@JsonProperty("order_id")
 	public String getOrder_id() {
 		return order_id;
 	}
@@ -41,7 +45,7 @@ public class SEOROrder {
 		this.order_id = order_id;
 	}
 	
-	@DynamoDBAttribute(attributeName="phone")
+	@JsonProperty("phone")
 	public String getPhone() {
 		return phone;
 	}
@@ -49,7 +53,7 @@ public class SEOROrder {
 		this.phone = phone;
 	}
 	
-	@DynamoDBAttribute(attributeName="timestamp")
+	@JsonProperty("timestamp")
 	public String getTimestamp() {
 		return timestamp;
 	}
@@ -57,7 +61,7 @@ public class SEOROrder {
 		this.timestamp = timestamp;
 	}
 	
-	@DynamoDBAttribute(attributeName="total_product_cost")
+	@JsonProperty("total_product_cost")
 	public double getTotal_product_cost() {
 		return total_product_cost;
 	}
@@ -65,7 +69,7 @@ public class SEOROrder {
 		this.total_product_cost = total_product_cost;
 	}
 	
-	@DynamoDBAttribute(attributeName="discount_amount")
+	@JsonProperty("discount_amount")
 	public double getDiscount_amount() {
 		return discount_amount;
 	}
@@ -73,7 +77,7 @@ public class SEOROrder {
 		this.discount_amount = discount_amount;
 	}
 	
-	@DynamoDBAttribute(attributeName="shipping_cost")
+	@JsonProperty("shipping_cost")
 	public double getShipping_cost() {
 		return shipping_cost;
 	}
@@ -81,7 +85,7 @@ public class SEOROrder {
 		this.shipping_cost = shipping_cost;
 	}
 	
-	@DynamoDBAttribute(attributeName="status")
+	@JsonProperty("status")
 	public String getStatus() {
 		return status;
 	}
@@ -89,12 +93,24 @@ public class SEOROrder {
 		this.status = status;
 	}
 	
-	@DynamoDBAttribute(attributeName="order")
-	public String getOrder() {
+	
+	@JsonProperty("order")
+	public JsonNode getOrder() {
 		return order;
 	}
-	public void setOrder(String order) {
+	public void setOrder(JsonNode order) {
 		this.order = order;
+	}
+	
+	public SEOROrder createObjectFromjsonString(String jsonString) {
+		System.out.println(jsonString.toString());
+		SEOROrder prevOrder = null;
+		try {
+			prevOrder = new ObjectMapper().readValue(jsonString, SEOROrder.class);
+		} catch (Exception e) {
+			throw new IllegalArgumentException("Couldnot map ddb response to SEOROrder. "+e.getMessage());
+		}
+		return prevOrder;
 	}
 	
 	public SEOROrder() {
@@ -110,5 +126,5 @@ public class SEOROrder {
 	private double discount_amount;
 	private double shipping_cost;
 	private String status;
-	private String order;
+	private JsonNode order;
 }
