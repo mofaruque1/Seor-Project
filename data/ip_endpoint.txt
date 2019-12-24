@@ -1,0 +1,3 @@
+ip endpoint :
+https://api.ipify.org?format=json
+http://api.db-ip.com/v2/free/72.142.92.205

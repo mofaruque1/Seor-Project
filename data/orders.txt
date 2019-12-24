@@ -1,0 +1,36 @@
+{
+  "customer_name": "Omor Faruque",
+  "address": "Dhaka Bangladesh",
+  "email": "abcdefgh@yah.com",
+  "phone": "01712767812",
+  "order_id": "email+localtime",
+  "total_product_cost": 4864,
+  "discount_amount": 0,
+  "currency" : "taka",
+  "shipping_cost": 100,
+  "order_status":"customer_complete | fulfillment in progress | shipped | delivered",
+  "order": [
+    {
+      "product_brand": "MAC",
+      "name": "Retro Matte Lipstick",
+      "sku": "SKU3946",
+      "price": 2432,
+      "shade": "Ruby Woo",
+      "size": "3 g / 0.1 US oz",
+      "product_type_in_ddb": "powder",
+      "product_url": "/product/13847/251/products/makeup/face/foundation/studio-fix-powder-plus-foundation",
+      "qty": 1
+    },
+    {
+      "product_brand": "MAC",
+      "name": "Powder Kiss Lipstick",
+      "sku": "SKU95915",
+      "price": 2432,
+      "shade": "A Little Tamed",
+      "size": "3 g / 0.1 US oz",
+      "product_type_in_ddb": "lipsticks",
+      "product_url": "/product/13854/60284/products/makeup/lips/lipstick/powder-kiss-lipstick",
+      "qty": 2
+    }
+  ]
+}

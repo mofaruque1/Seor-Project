@@ -1,4 +1,4 @@
 #!/bin/sh
 git add .
-git commit -m "Commit no : 3"
+git commit -m "Submit order working"
 git push

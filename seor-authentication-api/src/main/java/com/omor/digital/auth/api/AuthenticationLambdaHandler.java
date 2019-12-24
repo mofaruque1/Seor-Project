@@ -19,7 +19,7 @@ public class AuthenticationLambdaHandler extends RequestStreamLambdaHandler {
 	public void defineResources() {
 		get("/apiinfo", (req, res) -> {
 			res.status(200);
-			return "{ \"Api Name\" : \"Authentication Api\" }";
+			return "{ \"Api Name\" : \"Seor Apis\" }";
 		});
 
 		post("/register", (req, res) -> {
@@ -33,7 +33,7 @@ public class AuthenticationLambdaHandler extends RequestStreamLambdaHandler {
 			return new JsonTransformer().render(response);
 
 		});
-
+		
 	}
 
 	
