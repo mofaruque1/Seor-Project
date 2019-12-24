@@ -22,9 +22,6 @@ public class BaseSDK {
 		db = new DynamoDB(dynamoDB);
 	}
 	
-	
-	
-	
 	public DynamoDBMapper getMapper() {
 		return ddbTableMapper;
 	}

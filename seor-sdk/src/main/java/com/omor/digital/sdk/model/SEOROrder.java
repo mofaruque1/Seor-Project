@@ -6,11 +6,12 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SEOROrder {
 
 	@JsonProperty("customer_name")
@@ -35,6 +36,7 @@ public class SEOROrder {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+		setOrder_id(email);
 	}
 	
 	@JsonProperty("order_id")
@@ -102,7 +104,7 @@ public class SEOROrder {
 		this.order = order;
 	}
 	
-	public SEOROrder createObjectFromjsonString(String jsonString) {
+	public static SEOROrder createObjectFromjsonString(String jsonString) {
 		System.out.println(jsonString.toString());
 		SEOROrder prevOrder = null;
 		try {
@@ -114,6 +116,9 @@ public class SEOROrder {
 	}
 	
 	public SEOROrder() {
+		this.phone = "n/a";
+		this.customer_name = "n/a";
+		this.discount_amount = 0;
 		this.timestamp = new Date().toString();
 	}
 	private String customer_name;

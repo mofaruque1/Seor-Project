@@ -1,8 +1,6 @@
 package com.omor.digital.sdk;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -12,9 +10,6 @@ import com.amazonaws.services.dynamodbv2.document.QueryOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.document.spec.QuerySpec;
 import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.omor.digital.sdk.model.MacProductDetails;
 import com.omor.digital.sdk.model.OrderStatus;
 import com.omor.digital.sdk.model.SEOROrder;
@@ -52,21 +47,15 @@ public class ProductSDK extends BaseSDK {
 		Item item = null;
 		List<SEOROrder> prevOrders = new ArrayList<SEOROrder>();
 		String itemString = null;
-		JsonNode itemNode = null;
-
 		while (iterator.hasNext()) {
 			item = iterator.next();
 			itemString = item.toJSONPretty();
-			SEOROrder tempSeorOrder = new SEOROrder().createObjectFromjsonString(itemString);
+			SEOROrder tempSeorOrder = SEOROrder.createObjectFromjsonString(itemString);
 			prevOrders.add(tempSeorOrder);
 		}
 		return prevOrders;
 		
 	}
-	
-	
-	
-	
 	
 
 	public boolean submitOrder(SEOROrder order) {

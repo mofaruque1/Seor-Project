@@ -1,4 +1,4 @@
 #!/bin/sh
 git add .
-git commit -m "Before working on refactoring OrderSubmitRequest"
+git commit -m "After working on refactoring OrderSubmitRequest and SEOROrder"
 git push
