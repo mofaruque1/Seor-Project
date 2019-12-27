@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="dropdown">
+            <button class="dropbtn">Products</button>
+            <div class="dropdown-content">
+            <a href="#" (click)='getProducts("assorted")'>Assorted</a>
+            <a href="#" (click)='getProducts("lipgloss")'>Lipgloss</a>
+            <a href="#" (click)='getProducts("lipsticks")'>Lipsticks</a>
+            <a href="#" (click)='getProducts("mascara")'>Mascara</a>
+            <a href="#" (click)='getProducts("powder")'>Powder</a>
+
+            <a href="#" (click)='getProducts("concealer")'>Concealer</a>
+            <a href="#" (click)='getProducts("eyelash")'>Eyelash</a>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+
+
+<div *ngIf="products" class="container">
+    <div class="row space-between">
+        <div *ngFor="let item of products;let i = index" class="product-list-row">
+            <img class="product-lg-img" [src]="item.large_image_url" alt="">
+
+            <div class="product-details">
+                <p class="bitter" style="border-bottom: 1px solid black;">{{item.name}}</p>
+                <p class="roboto-mono">{{item.description}}</p>
+                <p class="roboto-mono">TK {{item.price}}.00</p>
+            </div>
+
+            <div class="abs-top-rigt">
+                <p>{{item.shade}}</p>
+            </div>
+
+            <div class="add-tocart-btn-box">
+                <button (click)="addToTheCart(i)" class="add-to-cart-btn">Add to cart</button>
+            </div>
+            <div class="my-black-layer"></div>
+
+        </div>
+    </div>
+</div>

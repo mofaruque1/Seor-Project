@@ -1,0 +1,13 @@
+<app-header 
+[noOfProductsInTheCart] = "noOfProductsInTheCart"
+[productsInTheCart] = "productsInTheCart"
+[totalPrice]  = "totalPrice"
+></app-header>
+<app-banner></app-banner>
+<app-products 
+(noOfProductsInTheCartChange)='setNoOfProductsInTheCart($event)'
+(productsInTheCartChange)='setProductsInTheCart($event)'
+(totalPriceChange)='setTotalPrice($event)'
+></app-products>
+
+<app-footer></app-footer>

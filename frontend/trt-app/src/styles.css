@@ -1,0 +1,79 @@
+
+@import url('https://fonts.googleapis.com/css?family=Bitter|Roboto Mono|Rokkitt|Satisfy|Poppins|Basic|Bungee|Courier Prime |Dancing Script|Bungee Inline|Roboto Slab|Patua One|Faster One|Cabin|Open Sans');
+@-ms-viewport {
+    width: device-width
+}
+
+/* [end] newly added */
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gelasio';
+}
+*,
+:after,
+:before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto
+}
+
+@media (max-width:1199px) {
+    .container {
+        width: calc(100% - 48px);
+        margin: 0 24px
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1200px
+    }
+}
+
+@media (min-width:1800px) {
+    .container {
+        max-width: 1310px
+    }
+}
+
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -12px;
+    margin-left: -12px
+}
+a:hover,
+a:focus {
+    text-decoration: none !important;
+}
+
+a {
+    cursor: pointer;
+}

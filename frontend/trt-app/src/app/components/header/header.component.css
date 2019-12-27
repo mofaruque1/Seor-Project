@@ -1,0 +1,72 @@
+.header-box {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    z-index: 22;
+
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.header-logo {
+    margin-top: 10px;
+    height: 60px;
+}
+
+.header-cart {
+    margin-top: 25px;
+}
+
+.cart-box {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon {
+    height: 23px;
+    margin-top: 20px;
+}
+
+.head-flex-item {
+    padding: 20px 0;
+}
+
+.cart-counter {
+    background-color: red;
+    color: black;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    top: 12px;
+    right: -8px;
+}
+
+.cart-products{
+    position: absolute;
+    background-color: white;
+    color: black;
+    width: 500px;
+    right: -15px;
+    text-align: center;
+    font-family: 'Roboto Mono';
+}
+
+.cart-total{
+    border-top: 1px solid black;
+    padding-top: 20px;
+}
+
+.view-bag-btn{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: none;
+}

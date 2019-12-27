@@ -1,5 +1,0 @@
-package com.omor.digital.auth.api.model;
-
-public class User {
-
-}

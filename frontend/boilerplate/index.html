@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+
+  <link href="header.footer.original.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+  <!-- [START] DESKTOP -->
+  <header class="dds-header dds-headerDesk">
+    <nav class="dds-navmain" aria-label="Main Menu">
+      <div class="dds-navmain-inner">
+        <div class="dds-header-brand">
+          <a class="dds-logo pad-3" tabindex="0">
+            <img alt="Rogers brand image" class="dds-icon-logo" src="./assets/images/logo.png">
+          </a>
+        </div>
+
+        <div class="dds-header-quicklinks">
+          <ul class="dds_o-navLinkList">
+
+            <!-- [START] SEARCH -->
+            <li class="dds_o-navLinkList__item" dropdown-section=''>
+              <a class="dds_m-navLink -icon dds_a-linkIconOnly dropdown-hide" title="Search" aria-label="Seaqrch rogers.com" tabindex="0"
+                aria-expanded="false" aria-haspopup="true">
+                <span class="dds_m-navLink__icon rds-icon-cart -open"></span>
+                <span class="dds_m-navLink__icon rds-icon-error -close"></span>
+              </a>
+              <ul class="dds_o-headerNavDropdown -quicklinks dQuickLinks" dropdown-list=''>
+                <li class="dds_o-headerNavDropdown__item">
+                  <form action="#" autocomplete="off">
+                    <div class="dds_o-searchBar">
+                      <div class="dds_o-searchBar__input">
+
+                        <label class="sr-only" for="searchInput">Search</label>
+                        <input class="dds_a-searchBar" id="searchInput" tabindex="-1" type="text" placeholder="Search">
+                      </div>
+                      <button aria-label="Enter to Search" class="dds_o-searchBar__submit dds_a-linkIconOnly" alt=" Search rogers.com" title="Search"
+                        type="submit" tabindex="-1">
+                        <span class="dds_a-icon rds-icon-search"></span>
+                      </button>
+                    </div>
+                  </form>
+                  <div class="dds_o-searchResults"></div>
+                </li>
+                <li class="o-headerNavDropdown__item -quicktitle">Quick Links</li>
+              </ul>
+            </li>
+            <!-- [END] SEARCH -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- [END] DESKTOP -->
+
+  <!-- [START] MOBILE -->
+  <header class="dds-header dds-headerMobile">
+    <div class="dds-navmain">
+
+      <div class="dds-navmain-inner">
+        <!-- [START] LOGO -->
+        <div class="dds-header-brand" id="skipNavigationMobile">
+          <a class="dds-logo" tabindex="0" title="Rogers ">
+            <img alt="Rogers brand image" class="dds-icon-logo" src="./assets//images/logo.png">
+          </a>
+        </div>
+        <!-- [END] LOGO -->
+        <!-- [START] SEARCH TRIGGER/CART -->
+        <div class="dds-header-quicklinks">
+          <ul class="dds_o-mobileNavLinkList -quicklinks">
+            <li class="dds_o-mobileNavLinkList__item">
+              <a class="dds_m-mobileNavLink -iconOnly" data-navid="search" title="Search rogers.com" tabindex="0" role="button" aria-expanded="false"
+                aria-haspopup="true" aria-label="Search and Quick Links">
+                <span class="dds_m-navLink__icon rds-icon-search -open"></span>
+                <span class="dds_m-navLink__icon rds-icon-error -close"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- [END] SEARCH TRIGGER/CART -->
+        <!-- [START] HAMBURGER -->
+        <div class="dds-header-hamburger-nav">
+          <a class="dds-header-mobilenav" data-navid="main" role="button" tabindex="0" aria-label="View navigation">
+            <span class="mobilenav-line1"></span>
+            <span class="mobilenav-line2"></span>
+            <span class="mobilenav-line3"></span>
+          </a>
+        </div>
+        <!-- [END] HAMBURGER -->
+      </div>
+    </div>
+
+    <!-- [START] SEARCH/QUICKLINKS -->
+    <nav class="dds-mobileNavCard consumer-search" nav-id="search">
+      <form action="#" autocomplete="off">
+        <div class="dds_o-mobileSearchBar">
+          <div class="dds_o-mobileSearchBar__input">
+            <label class="sr-only" for="searchInputMobile">Search</label>
+            <input class="dds_a-mobileSearchBar" id="searchInputMobile" type="text" placeholder="Search" tabindex="-1">
+          </div>
+          <button aria-label="Enter to Search" class="dds_o-mobileSearchBar__submit" title="Search" tabindex="-1">
+            <span class="dds_a-icon rds-icon-search"></span>
+          </button>
+        </div>
+      </form>
+
+    </nav>
+    <!-- [END] SEARCH/QUICKLINKS -->
+
+    <!-- [START] MAIN -->
+    <nav class="dds-mobileNavCard" nav-id="main" role="menubar">
+      <!-- [START] LOGIN -->
+      <ul class="dds_o-mobileNavLinkList">
+
+        <!-- [START] ANONYMOUS -->
+        <li class="dds_o-mobileNavLinkList__item loginStates stateAnonymous stateActive" dropdown-section=''>
+          <a class="signin-interceptor dds_m-mobileNavLink -login test-anon" aria-label="Sign in to My Rogers" tabindex="-1">
+            <span class="dds_m-mobileNavLink__icon rds-icon-avatar"></span>
+            <span class="dds_m-mobileNavLink__caption">Sign in</span>
+          </a>
+        </li>
+        <!-- [END] ANONYMOUS -->
+
+        <!-- [START] COOKIED -->
+
+        <li class="dds_o-navLinmobileNavLinkList__itemkList__item loginStates stateCookied" dropdown-section=''>
+          <a aria-expanded="false" aria-haspopup="true" class="signin-interceptor dds_m-mobileNavLink -dropdown -login dropdown-hide"
+            tabindex="-1" aria-label="Sign in to My Rogers">
+            <span class="dds_m-mobileNavLink__icon rds-icon-avatar"></span>
+            <span class="dds_m-mobileNavLink__caption user-name-cookie"></span>
+          </a>
+        </li>
+
+        <!-- [END] COOKIED -->
+
+
+        <!-- [START] LOGGED IN -->
+        <li class="dds_o-mobileNavLinkList__item loginStates stateLoggedin" dropdown-section=''>
+          <a aria-expanded="false" aria-haspopup="true" class="dds_m-mobileNavLink -dropdown -login dropdown-hide" tabindex="-1" title="Welcome">
+            <span class="dds_m-mobileNavLink__icon rds-icon-avatar"></span>
+            <span class="dds_m-mobileNavLink__caption user-loggedin"></span>
+            <span class="dds_m-mobileNavLink__chevron rds-icon-expand"></span>
+          </a>
+          <ul class="dds_o-mobileNavDropdown" dropdown-list=''>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink dropdownItem test-login1" title="Sign Out" tabindex="-1">Sign Out</a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- [END] LOGGED IN -->
+
+
+
+
+      </ul>
+      <!-- [END] LOGIN -->
+
+
+
+
+
+      <!-- [START] STORE -->
+      <ul class="dds_o-mobileNavLinkList">
+        <li class="dds_o-mobileNavLinkList__item">
+          <a class="dds_m-mobileNavLink" title="Find a Store" tabindex="-1" href="/web/content/store-locator?icid=tl-ottncon-fas-trcwrls-0711174">
+            <span class="dds_m-mobileNavLink__icon rds-icon-location"></span>
+            <span class="dds_m-mobileNavLink__caption">Find a Store</span>
+          </a>
+        </li>
+      </ul>
+      <!-- [END] STORE -->
+      <!-- [START] BROWSE -->
+      <ul class="dds_o-mobileNavLinkList">
+        <!-- [START] SHOP -->
+        <li class="dds_o-mobileNavLinkList__item" dropdown-section=''>
+          <a class="dds_m-mobileNavLink -dropdown dropdown-hide" title="Shop" aria-label="Select a service" tabindex="-1" aria-expanded="false"
+            aria-haspopup="true">
+            <span class="dds_m-mobileNavLink__caption">Shop</span>
+            <span class="dds_m-mobileNavLink__chevron rds-icon-expand"></span>
+          </a>
+          <ul class="dds_o-mobileNavDropdown" dropdown-list=''>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Wireless" role="menuitem" href="/consumer/wireless">Wireless</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Bundles" role="menuitem" href="/consumer/bundles">Bundles</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Digital TV" role="menuitem" href="/consumer/tv">Digital TV</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Ignite TV" role="menuitem" href="/consumer/about-rogers-iptv">Ignite TV</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Internet" role="menuitem" href="/consumer/internet">Internet</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Mobile Internet" role="menuitem" href="/consumer/wireless/mobile-internet">Mobile Internet</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Home Phone" role="menuitem" href="/consumer/home-phone">Home Phone</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Wireless Home Phone" role="menuitem" href="/consumer/wireless/wireless-home-phone">Wireless Home Phone</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Home Monitoring" role="menuitem" href="/consumer/home-monitoring">Home Monitoring</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Promotions" role="menuitem" href="/consumer/promotions">Promotions</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" tabindex="-1" title="Why Choose Rogers" role="menuitem" href="/consumer/why-choose-rogers">Why Choose Rogers</a>
+            </li>
+          </ul>
+        </li>
+        <!-- [END] SHOP -->
+        <!-- [START] MY ROGERS -->
+        <li class="dds_o-mobileNavLinkList__item">
+          <a class="dds_m-mobileNavLink -dropdown my-rogers-account" title="My Rogers" tabindex="-1" href="/consumer/easyloginriverpage">
+            <span class="dds_m-mobileNavLink__caption">My Rogers</span>
+          </a>
+        </li>
+        <!-- [END] MY ROGERS -->
+        <!-- [START] SUPPORT -->
+        <li class="dds_o-mobileNavLinkList__item">
+          <a class="dds_m-mobileNavLink -dropdown" title="Support" tabindex="-1" href="/consumer/support">
+            <span class="dds_m-mobileNavLink__caption">Support</span>
+          </a>
+        </li>
+        <!-- [END] SUPPORT -->
+      </ul>
+      <!-- [END] BROWSE -->
+      <!-- [START] PROVINCE -->
+      <ul class="dds_o-mobileNavLinkList">
+        <li class="dds_o-mobileNavLinkList__item" dropdown-section=''>
+          <a class="dds_m-mobileNavLink -dropdown dropdown-hide" title="Ontario selected" aria-label="Select a province" tabindex="-1"
+            aria-expanded="false" aria-haspopup="true">
+            <span class="dds_m-mobileNavLink__caption">Ontario</span>
+            <span class="dds_m-mobileNavLink__chevron rds-icon-expand"></span>
+          </a>
+          <ul class="dds_o-mobileNavDropdown" dropdown-list=''>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="Alberta" href="javascript:changeProvince('AB');" name="AB">Alberta</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="British Columbia" href="javascript:changeProvince('BC');" name="BC">British Columbia</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="Manitoba" href="javascript:changeProvince('MB');" name="MB">Manitoba</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="New Brunswick" href="javascript:changeProvince('NB');" name="NB">New Brunswick</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="Newfoundland and Labrador" href="javascript:changeProvince('NL');" name="NL">Newfoundland and Labrador</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="Northwest Territories" href="javascript:changeProvince('NT');" name="NT">Northwest Territories</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="Nova Scotia" href="javascript:changeProvince('NS');" name="NS">Nova Scotia</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="Nunavut" href="javascript:changeProvince('NU');" name="NU">Nunavut</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem -active" title="Ontario" href="javascript:changeProvince('ON');" name="ON">Ontario</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="Prince Edward Island" href="javascript:changeProvince('PE');" name="PE">Prince Edward Island</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="Quebec" href="javascript:changeProvince('QC');" name="QC">Quebec</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="Saskatchewan" href="javascript:changeProvince('SK');" name="SK">Saskatchewan</a>
+            </li>
+            <li class="dds_o-mobileNavDropdown__item">
+              <a class="dds_m-mobileNavLink -dropdownItem" title="Yukon" href="javascript:changeProvince('YT');" name="YT">Yukon</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- [END] PROVINCE -->
+      <!-- [START] LANG -->
+      <ul class="dds_o-mobileNavLinkList">
+        <li class="dds_o-mobileNavLinkList__item" dropdown-section=''>
+          <a class="dds_m-mobileNavLink" role="button" title="English selected" aria-label="Switch to French" tabindex="-1" aria-label="French"
+            onclick="newLangCookie('fr');" href="?setLanguage=fr">
+            <span>Francais</span>
+          </a>
+        </li>
+      </ul>
+      <!-- [END] LANG -->
+      <!-- [START] BRAND -->
+      <ul class="dds_o-mobileNavLinkList">
+        <li class="dds_o-mobileNavLinkList__item">
+          <a class="dds_m-mobileNavLink" title="Business" tabindex="-1" aria-label="Rogers Business" href="/business">
+            <span>Business</span>
+          </a>
+        </li>
+      </ul>
+      <!-- [END] BRAND -->
+    </nav>
+    <!-- [END] MAIN -->
+  </header>
+  <!-- [END] MOBILE -->
+
+
+
+
+
+
+
+  <!-- START -->
+  <!-- end -->
+
+
+
+  <script src="header.footer.js"></script>
+</body>
+
+</html>

@@ -13,6 +13,15 @@ public class MacProduct {
 	private String product_url;// product_url
 	private String product_type_in_ddb;// productType
 	private String product_category;// product_category_name
+	private String[] quick_view_images;
+
+	public String[] getQuick_view_images() {
+		return quick_view_images;
+	}
+
+	public void setQuick_view_images(String[] quick_view_images) {
+		this.quick_view_images = quick_view_images;
+	}
 
 	public String getProduct_brand() {
 		return product_brand;

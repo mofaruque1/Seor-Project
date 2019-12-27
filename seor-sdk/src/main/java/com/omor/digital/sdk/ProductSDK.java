@@ -64,11 +64,15 @@ public class ProductSDK extends BaseSDK {
 		Table table = db.getTable("trt-customer-order");
 		Item item = new Item().withPrimaryKey("order_id", order.getOrder_id())
 				.withString("customer_name", order.getCustomer_name())
-				.withString("shipping_address", order.getShipping_address()).withString("email", order.getEmail())
-				.withString("phone", order.getPhone()).withString("timestamp", order.getTimestamp())
+				.withString("shipping_address", order.getShipping_address())
+				.withString("email", order.getEmail())
+				.withString("phone", order.getPhone())
+				.withString("timestamp", order.getTimestamp())
 				.withDouble("total_product_cost", order.getTotal_product_cost())
 				.withDouble("discount_amount", order.getDiscount_amount())
-				.withDouble("shipping_cost", order.getShipping_cost()).withString("status", order.getStatus())
+				.withDouble("shipping_cost", order.getShipping_cost())
+				.withString("status", order.getStatus())
+				.withString("payment_status", order.getPayment_status())
 				.withJSON("order", order.getOrder().toString());
 
 		try {

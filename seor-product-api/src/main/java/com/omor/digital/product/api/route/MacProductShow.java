@@ -12,13 +12,13 @@ import spark.Response;
 public class MacProductShow {
 
 	private ProductSDK productSDK = null;
-	
+
 	public MacProductShow() {
 		this.productSDK = new ProductSDK();
 	}
 
 	public MacProduct[] getMacProducts(Request req, Response res) {
-		
+
 		String productType = null;
 		try {
 			productType = req.params(":type");
@@ -30,7 +30,9 @@ public class MacProductShow {
 		MacProductDetails productDetails = this.productSDK.getMacProducts(productType);
 		Utils.throwIfNullObject(productDetails, "No such product type");
 		int length = productDetails.getProduct_name().size();
+
 		MacProduct[] macProducts = new MacProduct[length];
+
 		MacProduct tempMacProduct = null;
 		try {
 			for (int i = 0; i < length; i++) {
@@ -47,6 +49,11 @@ public class MacProductShow {
 				tempMacProduct.setSku(productDetails.getProduct_sku().get(i));
 				tempMacProduct.setSize(productDetails.getProduct_size().get(i));
 				tempMacProduct.setSmall_image_url(productDetails.getProduct_sku_small_image_url().get(i));
+				
+				String[] quickViewImage = getQuickViewImages(tempMacProduct.getLarge_image_url());
+				if (quickViewImage !=null) {
+					tempMacProduct.setQuick_view_images(quickViewImage);
+				}
 				macProducts[i] = tempMacProduct;
 			}
 			res.status(200);
@@ -56,5 +63,19 @@ public class MacProductShow {
 		}
 
 		return macProducts;
+	}
+
+	private String[] getQuickViewImages(String primaryImage) {
+		String[] str1_1 = null;
+		if (primaryImage.contains("_0")) {
+			str1_1 = new String[4];
+			int length = str1_1.length;
+			for (int i = 0; i < length; i++) {
+				str1_1[i] = primaryImage.replace("_0", "_" + i);
+			}
+		}
+
+		return str1_1;
+
 	}
 }

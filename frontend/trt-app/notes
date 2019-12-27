@@ -1,0 +1,8 @@
+https://www.maccosmetics.ca/media/export/cms/products/640x600/mac_sku_S3HT1M_640x600_0.jpg
+https://www.maccosmetics.ca/media/export/cms/products/640x600/mac_sku_S3HT1M_640x600_3.jpg
+https://www.maccosmetics.ca/media/export/cms/products/640x600/mac_sku_S3HT1M_640x600_8.jpg
+
+Amazon SES:
+
+https://aws.amazon.com/getting-started/tutorials/send-an-email/
+https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/simpleemail/AmazonSimpleEmailService.html#sendEmail-com.amazonaws.services.simpleemail.model.SendEmailRequest-

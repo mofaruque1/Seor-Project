@@ -1,0 +1,13 @@
+.space-between {
+    justify-content: space-between;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.row{
+    margin: 0px;
+}

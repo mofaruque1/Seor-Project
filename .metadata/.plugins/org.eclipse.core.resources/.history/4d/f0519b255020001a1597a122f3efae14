@@ -1,5 +1,0 @@
-package com.omor.digital.base.api.exception;
-
-public class NotFoundException extends RuntimeException {
-
-}

@@ -95,6 +95,13 @@ public class SEOROrder {
 		this.status = status;
 	}
 	
+	@JsonProperty("payment_status")
+	public String getPayment_status() {
+		return payment_status;
+	}
+	public void setPayment_status(String payment_status) {
+		this.payment_status = payment_status;
+	}
 	
 	@JsonProperty("order")
 	public JsonNode getOrder() {
@@ -131,5 +138,6 @@ public class SEOROrder {
 	private double discount_amount;
 	private double shipping_cost;
 	private String status;
+	private String payment_status;
 	private JsonNode order;
 }

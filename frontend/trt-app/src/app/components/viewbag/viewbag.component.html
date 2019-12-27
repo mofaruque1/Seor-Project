@@ -1,0 +1,68 @@
+<app-header></app-header>
+
+<div class="container" style="padding-top: 200px;">
+    <div class="row">
+        <div class="view-bag-flex-item">
+
+            <div class="container">
+                <div class="signup-content">
+                    <div class="order-submit-form">
+                        <h2 class="form-title">Shipping information</h2>
+                        <form class="register-form" id="register-form">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name" #c_name />
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" #c_email />
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="text" name="phone" id="phone"
+                                    placeholder="Phone No" #c_phoneno />
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="s_address" id="s_address" placeholder="Shipping address"
+                                    #c_address />
+                            </div>
+            
+                            <div class="row order-copy">
+                                <div class="order-copy-title">Payment Option</div>
+                        
+                                <div class="radio-item">
+                                    <input type="radio" id="ritema" name="ritem" value="ropt1"  checked>
+                                    <label for="ritema"></label>
+                                    <span>Pay on delivery</span>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="ritemb" name="ritem" value="ropt2" >
+                                    <label for="ritemb"></label>
+                                    <span>Pay 50% upfront with bikash</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-button">
+                                <input
+                                    (click)='orderSubmitClicked(c_name.value,c_email.value,c_phoneno.value,c_address.value)'
+                                    type="button" name="signup" id="signup" class="form-submit submit-btn" value="Submit Order" />
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="view-bag-flex-item">
+            <h4 style="text-align: center; background-color: black;color: white;padding: 10px;">Your Bag</h4>
+            <div *ngFor="let item of productsInTheCart">
+                <img style="display: block;" [src]="item.large_image_url" alt="" height="200">
+                <p> {{item.name}} , price : {{item.price}}</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

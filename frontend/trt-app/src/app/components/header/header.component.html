@@ -1,0 +1,27 @@
+<div class="header-box">
+
+    <div class="container">
+        <div class="row space-between">
+            <div class="head-flex-item" style="cursor: pointer;" routerLink='/'>
+                <img class="header-logo" src="assets/images/brandlogo.png" alt="">
+            </div>
+            <div class="head-flex-item">
+
+                <div class="cart-box" (click)="showCartClicked()">
+                    <img class="cart-icon" src="assets/images/shopping-cart.png" alt=""><span
+                        *ngIf="noOfProductsInTheCart" class="cart-counter">{{noOfProductsInTheCart}}</span>
+
+                    <div class="cart-products" *ngIf="showCart">
+                        <div *ngFor="let item of productsInTheCart;let i =index;">
+                            <p>{{item.name}}, price : {{item.price}} <span style="margin-left: 20px;" (click)="removeItem(i)">x</span></p>
+                        </div>
+                        <p *ngIf="totalPrice" class="cart-total">total : {{totalPrice}}</p>
+                        <div class="view-bag-btn-box">
+                            <button class="view-bag-btn" routerLink="/viewbag">VIEW BAG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

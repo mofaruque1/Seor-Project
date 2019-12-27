@@ -42,6 +42,9 @@ public class OrderSubmit {
 			throw new InvalidArgumentException("Customer Email or address is missing");
 		}
 
+		if (seorOrder.getPayment_status()==null || seorOrder.getPayment_status().trim().equals("")) {
+			throw new InvalidArgumentException("Payment status missing");
+		}
 		boolean orderSubmitted = productSDK.submitOrder(seorOrder);
 		
 		if (!orderSubmitted) {
