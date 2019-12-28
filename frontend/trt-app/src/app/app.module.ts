@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+import { StoreModule } from "@ngrx/store";
+import { cartReducer } from "./reducer/cart.reducer";
+
+
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +28,8 @@ import { ViewbagComponent } from './components/viewbag/viewbag.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({cart : cartReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

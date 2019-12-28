@@ -35,10 +35,13 @@
             </div>
 
             <div class="add-tocart-btn-box">
-                <button (click)="addToTheCart(i)" class="add-to-cart-btn">Add to cart</button>
+                <button (click)="addToCartWithRedux(i)" class="add-to-cart-btn">Add to cart</button>
             </div>
             <div class="my-black-layer"></div>
 
         </div>
     </div>
 </div>
+
+<h2>No of item : {{ (userCart | async).noOfItem}}</h2>
+<h2>Total Price : {{ (userCart | async).totalPrice}}</h2>

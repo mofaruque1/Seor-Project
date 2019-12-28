@@ -1,6 +1,14 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 
+//redux
+import { Store } from "@ngrx/store";
+import { Observable, from } from 'rxjs';
+import { Cart } from 'src/app/models/cart.model';
+import { AppState } from 'src/app/app.state';
+import * as CartActions from "../../actions/cart.actions";
+
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -12,18 +20,35 @@ export class ProductsComponent implements OnInit {
   @Output() productsInTheCartChange = new EventEmitter();
   @Output() totalPriceChange = new EventEmitter();
 
+
+  // Redux test[Start]
+  userCart : Observable<Cart>;
+
+  // Redux test
+
   noOfProductsInTheCart: number = 0;
   totalPrice:number = 0;
   products: any[] = [];
   cartProducts: any[] = [];
 
   imageurl: string = "https://www.maccosmetics.ca";
-  constructor(private productService: ProductService) { }
+
+  constructor(private productService: ProductService, private store: Store<AppState>) { 
+    this.userCart = store.select('cart');
+
+  }
+
+
+
+
 
   ngOnInit() {
     this.getProducts("lipgloss");
     this.cartProducts = JSON.parse(localStorage.getItem('cart')) || [];
     this.noOfProductsInTheCart = this.cartProducts.length;
+
+    
+    
   }
 
   private getProducts(productType: string) {
@@ -53,6 +78,13 @@ export class ProductsComponent implements OnInit {
     this.productsInTheCartChange.emit(this.cartProducts);
     this.totalPriceChange.emit(this.totalPrice);
     
+  }
+
+  addToCartWithRedux(index:number){
+
+    
+    
+    this.store.dispatch(new CartActions.AddToCart(this.products[index]));
   }
 
 }

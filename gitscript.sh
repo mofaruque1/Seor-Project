@@ -1,4 +1,4 @@
 #!/bin/sh
 git add .
-git commit -m "quickview images are getting processed for mac products"
+git commit -m "redux is added to control the cart state"
 git push
