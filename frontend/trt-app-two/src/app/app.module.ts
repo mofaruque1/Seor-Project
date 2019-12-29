@@ -12,7 +12,6 @@ import { HeaderComponent } from './_components/header/header.component';
 import { FooterComponent } from './_components/footer/footer.component';
 import { BannerComponent } from './_components/banner/banner.component';
 import { ProductsComponent } from './_components/products/products.component';
-import { LandingPageComponent } from './_components/landing-page/landing-page.component';
 import { ErrorPageComponent } from './_components/error-page/error-page.component';
 import { MacLandingPageComponent } from './_components/mac-landing-page/mac-landing-page.component';
 
@@ -23,7 +22,6 @@ import { MacLandingPageComponent } from './_components/mac-landing-page/mac-land
     FooterComponent,
     BannerComponent,
     ProductsComponent,
-    LandingPageComponent,
     ErrorPageComponent,
     MacLandingPageComponent
   ],

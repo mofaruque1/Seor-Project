@@ -1,0 +1,149 @@
+.product-type {
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 17px 0;
+    font-family: 'Roboto Mono';
+
+    & a {
+        color: #000000;
+        &:hover {
+            border-bottom: 1px solid black;
+        }
+    }
+
+.dropbtn {
+    background-color: #fff;
+    text-transform: uppercase;
+    border: none;
+ 
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-family: 'Roboto Mono';
+    
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+      background-color: #000000;
+      color: white;
+    }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+}
+
+
+//---------Products lists css------------//
+
+.product-list-row {
+  flex: 0 0 30%;
+  border: 1px solid #c7c7c7;
+  margin: 35px 0;
+  position: relative;
+}
+
+.product-lg-img {
+  margin: 0 auto;
+  max-height: 320px;
+  max-width: 100%;
+  opacity: 1;
+  visibility: visible;
+  text-align: center;
+  transition: opacity 1s ease-in-out;
+  width: auto;
+  margin-top: 25px;
+}
+
+.product-details {
+  padding-left: 15px;
+  font-family: 'Roboto Mono';
+}
+
+.roboto-slab {
+  font-family: 'Roboto Slab';
+}
+
+.roboto-mono {
+  font-family: 'Roboto Mono';
+}
+
+.abs-top-rigt {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-family: 'Roboto Mono';
+}
+
+.add-tocart-btn-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto Mono';
+  z-index: 2;
+  text-align: center;
+}
+
+.add-to-cart-btn {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  margin: 10px;
+  display: none; 
+  cursor: pointer;
+  width: 200px;
+}
+
+.my-black-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  transition: 0.5s ease;
+  display: none;
+}
+
+.product-list-row:hover .add-to-cart-btn,
+.product-list-row:hover .my-black-layer {
+  display: block;
+}
+
+
+
+//--------Media query-----------//
+
+@media (max-width:999.98px) {
+  .product-list-row {
+    flex: 0 0 48%;
+  }
+}
+
+@media (max-width:599.98px) {
+  .product-list-row {
+    flex: 0 0 98%;
+  }
+}

@@ -1,1 +1,49 @@
-<p>mac-landing-page works!</p>
+<div class="container">
+    <div class="row space-between product-type">
+        <div> <a href="#">Foundation</a></div>
+        <div> <a href="#">Powder</a></div>
+        <div> <a href="#">Lipstick</a></div>
+        <div> <a href="#">Lip gloss</a></div>
+        <div> <a href="#">Makeup Primer</a></div>
+        <div> <a href="#">Concealer</a></div>
+        <div class="dropdown"> 
+            <button class="dropbtn">More</button>
+            <div class="dropdown-content">
+                <a href="#">Primer</a>
+                <a href="#">Mascara</a>
+                <a href="#">Eyelash</a>
+                <a href="#">Blush</a>
+                <a href="#">Eyebrow</a>
+                <a href="#">Lip Liner</a>
+              </div>
+        </div>
+    </div>
+</div>
+
+<app-banner [imageUrl]="'assets/images/lipstick_1.jpg'"></app-banner>
+
+
+<div *ngIf="products" class="container">
+    <div class="row space-between">
+        <div *ngFor="let item of products;let i = index" class="product-list-row">
+            <img class="product-lg-img" [src]="item.large_image_url" alt="">
+
+            <div class="product-details">
+                <p class="b-b-black">{{item.name}}</p>
+                <p>{{item.description}}</p>
+                <p>TK {{item.price}}.00</p>
+            </div>
+
+            <div class="abs-top-rigt">
+                <p>{{item.shade}}</p>
+            </div>
+
+            <div class="add-tocart-btn-box">
+                <button class="add-to-cart-btn">Quick view</button>
+                <button class="add-to-cart-btn">Add to cart</button>
+            </div>
+            <div class="my-black-layer"></div>
+
+        </div>
+    </div>
+</div>
