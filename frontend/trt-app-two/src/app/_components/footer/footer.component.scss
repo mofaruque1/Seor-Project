@@ -1,0 +1,48 @@
+.site-footer {
+
+    background: #000000;
+    font-family: 'Roboto Mono';
+    color: white;
+    padding: 25px 0;
+
+    @media (max-width:899.98px) {
+        & {
+            font-size: 15px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .site-footer {
+        padding: 8em 0;
+    }
+}
+
+.site-footer .border-top {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+.site-footer h5 {
+    color: #fff;
+}
+
+.site-footer a {
+    color: #ffffff;
+
+}
+
+
+.site-footer ul li {
+    margin-bottom: 10px;
+}
+
+.site-footer .footer-heading {
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+}

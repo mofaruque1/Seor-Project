@@ -27,26 +27,26 @@ class Helper {
 
     }
 
-    public static addToCart(state:Cart,item: any): Cart {
+    public static addToCart(state: Cart, item: any): Cart {
         state.noOfItem++;
-        state.totalPrice +=item.price;
+        state.totalPrice += item.price;
         state.order.push(item);
-        localStorage.setItem('order',JSON.stringify(state.order));
+        localStorage.setItem('order', JSON.stringify(state.order));
         return state;
 
     }
 
-    public static removeFromCart(state:Cart,index: number): Cart {
+    public static removeFromCart(state: Cart, index: number): Cart {
         state.noOfItem--;
-        state.totalPrice -=state.order[index].price;
-        let newOrder:any[] = [];
-        state.order.forEach((element,i) => {
+        state.totalPrice -= state.order[index].price;
+        let newOrder: any[] = [];
+        state.order.forEach((element, i) => {
             if (index != i) {
                 newOrder.push(element);
             }
         });
         state.order = newOrder;
-        localStorage.setItem('order',JSON.stringify(state.order));
+        localStorage.setItem('order', JSON.stringify(state.order));
         return state;
     }
 }
@@ -62,9 +62,9 @@ export function cartReducer(state: Cart = initialState, action: CartActions.Acti
     console.log(action.type, state);
     switch (action.type) {
         case CartActions.ADD_TO_CART:
-            return Helper.addToCart(state,action.payload);
+            return Helper.addToCart(state, action.payload);
         case CartActions.REMOVE_FROM_CART:
-            return Helper.removeFromCart(state,action.payload);
+            return Helper.removeFromCart(state, action.payload);
         default:
             return state;
     }

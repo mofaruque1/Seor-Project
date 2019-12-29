@@ -1,0 +1,115 @@
+.header-box {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    z-index: 22;
+    color: white;
+
+    & .head-flex-item {
+        padding: 4px 0 2px;
+
+        .header-logo-box{
+            height: 60px;
+            line-height: 60px;
+        }
+        .header-logo {
+            display: block;
+            font-size: 28px;
+            font-family: 'Roboto Slab';
+            margin-right: 20px;
+            @media (max-width:899.98px) {
+                & {
+                    height: 40px;
+                }
+            }
+        }
+
+        .cart-box {
+            font-family: 'Roboto Mono';
+            & .sign-in-box{
+                margin-right: 20px;
+                font-size: 12px;
+                color: #ffffff;
+                span{
+                    display: block;
+                }
+            }
+        }
+
+        .item-cart {
+            border: 1px solid white;
+            display: block;
+            text-align: center;
+            width: 20px;
+            height: 21px;
+            font-size: 13px;
+            background-color: black;
+
+            @media (max-width:899.98px) {
+                & {
+                    width: 17px;
+                    height: 18px;
+                    font-size: 11px;
+                }
+            }
+        }
+
+        .half-circle {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1px solid white;
+            display: block;
+            z-index: -1;
+            top: -7px;
+            left: 3px;
+
+            @media (max-width:899.98px) {
+                & {
+                    top: 19px;
+                    width: 11px;
+                    height: 11px;
+                }
+            }
+        }
+
+        .product-brands {
+            margin-left: 15px;
+
+            & a {
+                color: white !important;
+                margin-left: 20px;
+
+                &:hover {
+                    border-bottom: 1.5px solid white;
+                }
+            }
+
+        }
+    }
+
+    & .hamburger-menu{
+        font-family: 'Roboto Slab';
+    }
+}
+
+.header-mobile {
+    display: none;
+}
+
+@media (max-width:899.98px) {
+    .header-desktop {
+        display: none;
+    }
+
+    .header-mobile {
+        display: block;
+    }
+}
+
+
+
+//test
