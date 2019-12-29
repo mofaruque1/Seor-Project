@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.state';
+import { Observable } from 'rxjs';
+import { Cart } from 'src/app/_models/cart.model';
+import * as CartActions from "../../_actions/cart.actions";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +12,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   public isMenuCollapsed = true;
-  constructor() { }
+  userCart : Observable<Cart>;
+  constructor(private store: Store<AppState>) {
+    this.userCart = store.select('cart');
+   }
 
   ngOnInit() {
   }
 
+  removeItem(index:number){
+    this.store.dispatch(new CartActions.RemoveFromCart(index));
+  }
 }

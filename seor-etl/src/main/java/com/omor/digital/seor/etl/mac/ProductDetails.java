@@ -69,11 +69,14 @@ public class ProductDetails {
 		return product_adjusted_price;
 	}
 
+	/**
+	 * @param price added 20 CAD for tax and shipping
+	 */
 	private void setProduct_adjusted_price(Double[] price) {
 		int length = price.length;
 		Double[] adjusted_price = new Double[length];
 		for (int i = 0; i < length; i++) {
-			adjusted_price[i] = price[i] + 15;
+			adjusted_price[i] = price[i] + 20;
 		}
 		setproduct_price_converted_to_taka(adjusted_price);
 		this.product_adjusted_price = adjusted_price;
@@ -85,13 +88,13 @@ public class ProductDetails {
 
 	/**
 	 * returns converted price in TAKA
-	 * Conversion rate 1$ = 64tk
+	 * Conversion rate 1$ = 67tk
 	 */
 	public void setproduct_price_converted_to_taka(Double[] price) {
 		int length = price.length;
 		Double[] converted_price = new Double[length];
 		for (int i = 0; i < length; i++) {
-			converted_price[i] = Math.ceil(price[i] * 64);
+			converted_price[i] = Math.ceil(price[i] * 67);
 		}
 		this.product_price_converted_to_taka = converted_price;
 	}

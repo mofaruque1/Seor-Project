@@ -22,6 +22,7 @@
             @media (max-width:899.98px) {
                 & {
                     height: 40px;
+                    font-size: 25px;
                 }
             }
         }
@@ -35,6 +36,34 @@
                     display: block;
                 }
             }
+            // <!-- VIEW BAG -->
+            & .cart-products{
+                position: absolute;
+                background-color: white;
+                color: black;
+                width: 500px;
+                right: -15px;
+                text-align: center;
+                font-family: 'Roboto Mono';
+                padding: 20px;
+                & .cart-total{
+                    border-top: 1px solid black;
+                    padding-top: 20px;
+                }
+
+                & .view-bag-btn{
+                    width: 100%;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                    border: none;
+                }
+            }
+
+
+            //<!-- VIEW BAG -->
         }
 
         .item-cart {
@@ -109,6 +138,3 @@
     }
 }
 
-
-
-//test
