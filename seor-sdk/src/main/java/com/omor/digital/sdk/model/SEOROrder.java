@@ -111,6 +111,22 @@ public class SEOROrder {
 		this.order = order;
 	}
 	
+	@JsonProperty("bkash_transaction_id")
+	public String getBkash_transaction_id() {
+		return bkash_transaction_id;
+	}
+	public void setBkash_transaction_id(String bkash_transaction_id) {
+		this.bkash_transaction_id = bkash_transaction_id;
+	}
+	
+	@JsonProperty("payement_processing_corp")
+	public String getPayement_processing_corp() {
+		return payement_processing_corp;
+	}
+	public void setPayement_processing_corp(String payement_processing_corp) {
+		this.payement_processing_corp = payement_processing_corp;
+	}
+	
 	public static SEOROrder createObjectFromjsonString(String jsonString) {
 		System.out.println(jsonString.toString());
 		SEOROrder prevOrder = null;
@@ -127,7 +143,9 @@ public class SEOROrder {
 		this.customer_name = "n/a";
 		this.discount_amount = 0;
 		this.timestamp = new Date().toString();
+		this.bkash_transaction_id = "no id entered";
 	}
+	
 	private String customer_name;
 	private String shipping_address;
 	private String email;
@@ -137,6 +155,14 @@ public class SEOROrder {
 	private double total_product_cost;
 	private double discount_amount;
 	private double shipping_cost;
+	
+	
+
+	private String bkash_transaction_id;
+	private String payement_processing_corp;
+	
+	
+
 	private String status;
 	private String payment_status;
 	private JsonNode order;

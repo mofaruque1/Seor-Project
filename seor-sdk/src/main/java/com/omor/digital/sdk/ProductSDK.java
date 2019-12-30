@@ -66,6 +66,8 @@ public class ProductSDK extends BaseSDK {
 				.withString("customer_name", order.getCustomer_name())
 				.withString("shipping_address", order.getShipping_address())
 				.withString("email", order.getEmail())
+				.withString("payement_processing_corp", order.getPayement_processing_corp())
+				.withString("bkash_transaction_id", order.getBkash_transaction_id())
 				.withString("phone", order.getPhone())
 				.withString("timestamp", order.getTimestamp())
 				.withDouble("total_product_cost", order.getTotal_product_cost())

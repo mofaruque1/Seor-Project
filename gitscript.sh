@@ -1,4 +1,4 @@
 #!/bin/sh
 git add .
-git commit -m "Front-end: redux implemented and quick view implemented"
+git commit -m "Front-end: Cart UI implemented"
 git push

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family= Gelasio|Muli|Courier Prime|Roboto Mono|Poppins|Roboto Slab|Cabin|Open Sans');
+@import url('https://fonts.googleapis.com/css?family= Gelasio|Nanum Gothic:800|Muli|Courier Prime|Roboto Mono|Poppins|Roboto Slab|Cabin|Open Sans');
 
 @-ms-viewport {
     width: device-width
@@ -70,39 +70,95 @@ a:focus {
     text-decoration: none !important;
 }
 
-a,.cur-pointer {
+a,
+.cur-pointer {
     cursor: pointer;
 }
-.color-white{
+
+.color-white {
     color: white;
 }
+
 .space-between {
     justify-content: space-between;
 }
-.align-center{
+
+.align-center {
     align-items: center;
 }
-.display-flex{
+
+.display-flex {
     display: flex;
 }
-.active{
+
+.active {
     border-bottom: 1px solid white;
 }
-.pos-relative{
+
+.pos-relative {
     position: relative;
 }
-.b-b-black{
+
+.b-b-black {
     border-bottom: 1px solid black;
 }
-.border-0{
+
+.border-0 {
     border: 0px;
 }
-.modal-close-size{
+
+.modal-close-size {
     font-size: 28px;
 }
-.f-14{
+
+.f-14 {
     font-size: 14px;
 }
-.f-w-b{
+
+.f-w-b {
     font-weight: bold;
+}
+
+.c-b {
+    color: #000;
+}
+
+.op-1 {
+    opacity: 1;
+}
+
+.m-t-10{
+    margin-bottom: 10px;
+}
+.m-b-25 {
+    margin-bottom: 25px;
+}
+.m-b-30 {
+    margin-bottom: 30px;
+}
+.m-b-10{
+    margin-bottom: 10px;
+}
+
+.m-l-20{
+    margin-left: 20px;
+}
+.t-al-l {
+    text-align: left;
+}
+
+.rob-mono {
+    font-family: 'Roboto Mono';
+}
+
+.f-d-c {
+    flex-direction: column;
+}
+
+.btn-b-w {
+    background-color: white;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
 }

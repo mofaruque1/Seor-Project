@@ -19,6 +19,9 @@
             font-size: 28px;
             font-family: 'Roboto Slab';
             margin-right: 20px;
+            .bd-logo{
+                color: #06d906;
+            }
             @media (max-width:899.98px) {
                 & {
                     height: 40px;
@@ -41,14 +44,31 @@
                 position: absolute;
                 background-color: white;
                 color: black;
-                width: 500px;
+                width: 400px;
+                top:66px;
                 right: -15px;
                 text-align: center;
-                font-family: 'Roboto Mono';
-                padding: 20px;
+                font-family: 'Nanum Gothic';
+                letter-spacing: 1px;
+                padding: 20px 30px;
+                border: 1px solid #c7c7c7;
+
                 & .cart-total{
-                    border-top: 1px solid black;
+                    border-top: 1px solid #c7c7c7;
                     padding-top: 20px;
+                    display: flex;
+                    font-weight: bold;
+                }
+
+                & .checkout-btn{
+                    width: 100%; 
+                    background-color: black;
+                    padding: 15px; 
+                    color: white;border: none;
+                }
+                & .cart-item-container{
+                    max-height: 600px; 
+                    overflow: scroll;
                 }
 
                 & .view-bag-btn{
@@ -59,6 +79,15 @@
                     color: white;
                     cursor: pointer;
                     border: none;
+                }
+
+                & .cart-item{
+                    width: 50%; 
+                    text-align: left;
+                    margin-bottom: 35px;
+                    p{
+                        margin-bottom:8px;
+                    }
                 }
             }
 
