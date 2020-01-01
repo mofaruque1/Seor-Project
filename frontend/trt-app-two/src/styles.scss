@@ -128,7 +128,14 @@ a,
 }
 
 .m-t-10{
-    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.m-t-25{
+    margin-top: 25px;
+}
+.p-t-10{
+    padding-top: 10px;
 }
 .m-b-25 {
     margin-bottom: 25px;
@@ -146,9 +153,19 @@ a,
 .t-al-l {
     text-align: left;
 }
+.t-al-c {
+    text-align: center;
+}
+.l-s-1{
+    letter-spacing: 1px;
+}
 
 .rob-mono {
     font-family: 'Roboto Mono';
+    letter-spacing: 0;
+}
+.nanum-gothic{
+    font-family: 'Nanum Gothic';
 }
 
 .f-d-c {
@@ -161,4 +178,15 @@ a,
     padding: 0;
     cursor: pointer;
     text-decoration: underline;
+}
+
+
+@media(max-width:899.99px){
+    .m-0-899{
+        margin: 0;
+    }
+}
+
+.c-red{
+    color: red;
 }

@@ -12,7 +12,7 @@ import * as CartActions from "../../_actions/cart.actions";
 })
 export class HeaderComponent implements OnInit {
   public isMenuCollapsed:boolean = true;
-  public showCart:boolean = true;
+  public showCart:boolean = false;
   userCart : Observable<Cart>;
   baseImageUrl:string = 'https://www.maccosmetics.ca';
   constructor(private store: Store<AppState>) {
@@ -26,8 +26,5 @@ export class HeaderComponent implements OnInit {
     this.store.dispatch(new CartActions.RemoveFromCart(index));
   }
 
-  test(show:boolean){
-    alert(show);
-    this.showCart = show;
-  }
+
 }

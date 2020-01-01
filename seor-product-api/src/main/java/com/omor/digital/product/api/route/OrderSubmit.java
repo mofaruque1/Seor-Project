@@ -36,7 +36,13 @@ public class OrderSubmit {
 			System.out.printf("invalid request payload.", e);
 			throw new InvalidArgumentException("invalid request payload. " + e.getMessage());
 		}
-		if (seorOrder.getEmail() == null || seorOrder.getEmail().trim().equals("") || seorOrder.getShipping_address() == null
+		
+		if (seorOrder.getEmail() == null || seorOrder.getEmail().trim().equals("")) {
+			seorOrder.setEmail("n/a");
+			seorOrder.setOrder_id(seorOrder.getPhone());
+		}
+		
+		if (seorOrder.getShipping_address() == null
 				|| seorOrder.getShipping_address().trim().equals("")) {
 			System.out.printf("Customer email or address is missing.");
 			throw new InvalidArgumentException("Customer Email or address is missing");
@@ -62,6 +68,8 @@ public class OrderSubmit {
 
 		OrderSubmitResponse response = new OrderSubmitResponse();
 		response.setStatus("success");
+		response.setOrderId(seorOrder.getOrder_id());
+		response.setTimeStamp(seorOrder.getTimestamp());
 
 		return response;
 	}

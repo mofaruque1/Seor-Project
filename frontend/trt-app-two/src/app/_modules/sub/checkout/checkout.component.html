@@ -1,0 +1,111 @@
+<div class="container m-b-25">
+    <div class="row">
+
+        <div class="checkout-flx-box  m-t-25 m-b-25">
+            <div class="order-submit-form">
+                <h4 class="l-s-1 m-t-25 nanum-gothic">SHIPPING</h4>
+                <form class="f-14">
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input type="text" name="name" id="name" placeholder="*Your Name" #c_name />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"></label>
+                        <input type="text" name="phone" id="phone" placeholder="*Phone No" #c_phoneno />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="email" name="email" id="email" placeholder="Your Email (Optional)" #c_email />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="s_address"></label>
+                        <input [disabled]="pickupSelected" type="text" name="s_address" id="s_address" placeholder="*Shipping address (only inside Dhaka, Bangladesh)" #c_address /><br>
+                        <input type="checkbox" name="pickup_loc" value="pickup" [(ngModel)]='pickupSelected'> Or you can pickup from House no 124, Uttara, Dhaka
+                       
+                    </div>
+
+                    <div class="form-group">
+                        <textarea placeholder="Notes about your order, e.g. Shade request, special notes for delivery (optional)" #c_notes></textarea>
+                    </div>
+
+                    <div class="row order-copy">
+                        <div class="order-copy-title">Payment Option</div>
+
+                        <div class="radio-item">
+                            <input type="radio" id="ritema" name="ritem" value="50%" checked (change)="paymentOptionClicked('50%')">
+                            <label for="ritema"></label>
+                            <span>Pay 50% of the total amount, TK {{Math.ceil((userCart | async).totalCostWithShipping / 2)}}.00</span>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="ritemb" name="ritem" value="100%" (change)="paymentOptionClicked('100%')">
+                            <label for="ritemb"></label>
+                            <span>Pay 100% of the total amount, TK {{(userCart | async).totalCostWithShipping}}.00</span>
+                        </div>
+                    </div>
+                    <div class="form-group form-button">
+                        <input type="button" name="signup" id="signup" class="form-submit submit-btn"
+                            value="CONTINUE TO PAYMENT" (click)='continueToPaymentClicked(c_name.value,c_phoneno.value,c_email.value,c_address.value, c_notes.value)'/>
+                        <p *ngIf="missingNameOrPhoneNo" class="c-red">* Missing Customer name or phone no</p>
+                        <p *ngIf="missingShippingAddress" class="c-red">* Provide shipping address or select pickup option</p>
+                    </div>
+                </form>
+            </div>
+
+            <section  class="guarantee-panel">
+                <header>
+                    <h3 class="guarantee-panel__title nanum-gothic m-t-25">Our Guarantee</h3>
+                </header>
+    
+                <div class="content rob-mono f-14">
+                    <p> We guaranttee the authenticity of the products. If anyone say otherwise and can prove the product is a replica or fake, we will reimburse double the money.</p>
+                </div>
+            </section>
+
+
+
+        </div>
+
+
+
+        <div class="checkout-flx-box">
+            <div class="cart-products">
+                <div class="display-flex f-w-b space-between m-b-30">
+                    <div>ORDER SUMMARY</div>
+                </div>
+                <div class="cart-item-container">
+                    <div *ngFor="let item of (userCart | async).order;let i =index;"
+                        class="display-flex space-between t-al-l">
+                        <div><img [src]="baseImageUrl + item.small_image_url" class="m-l-20 m-0-899" width="100" alt="">
+                        </div>
+                        <div class="c-b op-1 cart-item">
+                            <p>{{item.name}}</p>
+                            <p class="rob-mono">{{item.shade}}</p>
+                            <p class="rob-mono">{{item.size}}</p>
+                            <p>TK {{item.price}}.00</p>
+                            <button class="btn-b-w rob-mono f-14" (click)="removeItem(i)">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-b-30 m-t-10 cart-total space-between">
+                    <div>SUBTOTAL</div>
+                    <div class="cur-pointer">TK {{(userCart | async).totalPrice}}.00</div>
+                </div>
+                <div class="m-b-30 shipping-cost space-between">
+                    <div>SHIPPING</div>
+                    <div class="cur-pointer">TK {{(userCart | async).shippingCost}}.00</div>
+                </div>
+                <div class="m-b-30 display-flex space-between">
+                    <div>ESTIMATED TOTAL</div>
+                    <div class="cur-pointer">TK {{(userCart | async).totalCostWithShipping}}.00</div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+</div>

@@ -6,7 +6,8 @@ import { MacLandingPageComponent } from './_components/mac-landing-page/mac-land
 
 const routes: Routes = [
   { path: '', component: MacLandingPageComponent },
-  { path: 'error', component: ErrorPageComponent }
+  { path: 'error', component: ErrorPageComponent },
+  { path: 'sub', loadChildren: () => import('./_modules/sub/sub.module').then(mod => mod.SubModule) }
 ];
 
 @NgModule({

@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { SharedCompModule } from "./modules/shared-comp/shared-comp.module";
+
+
 import { StoreModule } from "@ngrx/store";
 import { cartReducer } from "./reducer/cart.reducer";
 
@@ -23,12 +26,13 @@ import { ViewbagComponent } from './components/viewbag/viewbag.component';
     FooterComponent,
     ProductsComponent,
     LandingpageComponent,
-    ViewbagComponent
+    ViewbagComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    SharedCompModule,
     StoreModule.forRoot({cart : cartReducer})
   ],
   providers: [],

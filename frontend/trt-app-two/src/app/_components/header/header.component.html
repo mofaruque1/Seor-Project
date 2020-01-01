@@ -7,8 +7,8 @@
             <div class="head-flex-item cur-pointer">
                 <div class="row">
                     <div class="header-logo-box">
-                        <!-- <span class="header-logo">Authenticity | Bangladesh</span> -->
-                        <div class="header-logo">Authenticity | <span class="f-14 bd-logo">Bangladesh</span></div>
+                        
+                        <div routerLink="/" class="header-logo">Authenticity | <span class="f-14 bd-logo">Bangladesh</span></div>
 
                     </div>
                     <div class="display-flex product-brands align-center">
@@ -31,7 +31,7 @@
                         <span class="half-circle"></span>
                     </div>
 
-                    <!-- VIEW BAG -->
+                    <!-- VIEW CART -->
                     <div *ngIf="showCart" class="cart-products">
                         <div class="display-flex f-w-b space-between m-b-25">
                             <div>YOUR BAG</div>
@@ -40,9 +40,6 @@
                             </div>
 
                         </div>
-
-            
-
                         <div class="cart-item-container">
                             <div *ngFor="let item of (userCart | async).order;let i =index;"
                                 class="display-flex space-between t-al-l">
@@ -51,25 +48,21 @@
                                 <div class="c-b op-1 cart-item">
                                     <p>{{item.name}}</p>
                                     <p class="rob-mono">{{item.shade}}</p>
+                                    <p class="rob-mono">{{item.size}}</p>
                                     <p>TK {{item.price}}.00</p>
                                     <button class="btn-b-w rob-mono f-14" (click)="removeItem(i)">Remove</button>
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="cart-total space-between m-b-30 m-t-10">
                             <div>SUBTOTAL</div>
                             <div class="cur-pointer">TK {{(userCart | async).totalPrice}}.00</div>
-
                         </div>
-                        <button class="f-14 checkout-btn m-b-30">CHECKOUT</button>
-
-
-                        
-
+                        <button class="f-14 checkout-btn m-b-30" routerLink="/sub/checkout" (click)="showCart=false">CHECKOUT</button>
+                        <p class="rob-mono f-14 ">Delivery within 15 to 30 days</p>
+                        <p class="rob-mono f-14 ">From USA or CANADA</p>
                     </div>
-                    <!-- VIEW BAG -->
+                    <!-- VIEW CART -->
 
 
 
@@ -99,15 +92,49 @@
             <div class="head-flex-item cur-pointer">
                 <div class="row">
                     <div class="header-logo-box">
-                        <span class="header-logo">Authenticity</span>
+                        <!-- <span class="header-logo">Authenticity</span> -->
+                        <div class="header-logo">Authenticity | <span class="f-14 bd-logo">Bangladesh</span></div>
                     </div>
                 </div>
             </div>
             <div class="head-flex-item display-flex align-center pos-relative">
                 <div class="cart-box cur-pointer">
-                    <span class="item-cart">{{(userCart | async).noOfItem}}</span>
+                    <span class="item-cart" (click)="showCart=true">{{(userCart | async).noOfItem}}</span>
                     <span class="half-circle"></span>
+
+                    <!-- VIEW CART -->
+                    <div *ngIf="showCart" class="cart-products">
+                        <div class="display-flex f-w-b space-between m-b-25">
+                            <div>YOUR BAG</div>
+                            <div class="cur-pointer" (click)="showCart=false">
+                                <img src="assets/images/cross-out.png" width="20" alt="">
+                            </div>
+
+                        </div>
+                        <div class="cart-item-container">
+                            <div *ngFor="let item of (userCart | async).order;let i =index;"
+                                class="display-flex space-between t-al-l">
+                                <div><img [src]="baseImageUrl + item.small_image_url" class="m-l-20" width="100" alt="">
+                                </div>
+                                <div class="c-b op-1 cart-item">
+                                    <p>{{item.name}}</p>
+                                    <p class="rob-mono">{{item.shade}}</p>
+                                    <p>TK {{item.price}}.00</p>
+                                    <button class="btn-b-w rob-mono f-14" (click)="removeItem(i)">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-b-30 m-t-10 cart-total space-between">
+                            <div>SUBTOTAL</div>
+                            <div class="cur-pointer">TK {{(userCart | async).totalPrice}}.00</div>
+                        </div>
+                        <button class="f-14 m-b-30 checkout-btn" routerLink="/sub/checkout" (click)="showCart=false">CHECKOUT</button>
+                        <p class="rob-mono f-14 ">Delivery with in 15 to 30 days</p>
+                        <p class="rob-mono f-14 ">From USA or CANADA</p>
+                    </div>
+                    <!-- VIEW CART -->
                 </div>
+
             </div>
         </div>
 

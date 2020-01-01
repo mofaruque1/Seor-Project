@@ -55,6 +55,18 @@ public class SEOROrder {
 		this.phone = phone;
 	}
 	
+	@JsonProperty("city")
+	public String getCity() {
+		if(this.city==null || this.city.trim()=="") {
+			return "Dhaka";
+		}
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	
 	@JsonProperty("timestamp")
 	public String getTimestamp() {
 		return timestamp;
@@ -111,6 +123,14 @@ public class SEOROrder {
 		this.order = order;
 	}
 	
+	@JsonProperty("order_notes")
+	public String getOrder_notes() {
+		return order_notes;
+	}
+	public void setOrder_notes(String order_notes) {
+		this.order_notes = order_notes;
+	}
+	
 	@JsonProperty("bkash_transaction_id")
 	public String getBkash_transaction_id() {
 		return bkash_transaction_id;
@@ -125,6 +145,14 @@ public class SEOROrder {
 	}
 	public void setPayement_processing_corp(String payement_processing_corp) {
 		this.payement_processing_corp = payement_processing_corp;
+	}
+	
+	@JsonProperty("customer_pickup")
+	public boolean isCustomer_pickup() {
+		return customer_pickup;
+	}
+	public void setCustomer_pickup(boolean customer_pickup) {
+		this.customer_pickup = customer_pickup;
 	}
 	
 	public static SEOROrder createObjectFromjsonString(String jsonString) {
@@ -144,6 +172,8 @@ public class SEOROrder {
 		this.discount_amount = 0;
 		this.timestamp = new Date().toString();
 		this.bkash_transaction_id = "no id entered";
+		this.order_notes = "n/a";
+		this.customer_pickup = false;
 	}
 	
 	private String customer_name;
@@ -151,18 +181,15 @@ public class SEOROrder {
 	private String email;
 	private String order_id;
 	private String phone;
+	private String city;
 	private String timestamp;
 	private double total_product_cost;
 	private double discount_amount;
 	private double shipping_cost;
-	
-	
-
 	private String bkash_transaction_id;
 	private String payement_processing_corp;
-	
-	
-
+	private String order_notes;
+	private boolean customer_pickup;
 	private String status;
 	private String payment_status;
 	private JsonNode order;

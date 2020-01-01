@@ -69,12 +69,15 @@ public class ProductSDK extends BaseSDK {
 				.withString("payement_processing_corp", order.getPayement_processing_corp())
 				.withString("bkash_transaction_id", order.getBkash_transaction_id())
 				.withString("phone", order.getPhone())
+				.withString("city", order.getCity())
 				.withString("timestamp", order.getTimestamp())
 				.withDouble("total_product_cost", order.getTotal_product_cost())
 				.withDouble("discount_amount", order.getDiscount_amount())
 				.withDouble("shipping_cost", order.getShipping_cost())
 				.withString("status", order.getStatus())
 				.withString("payment_status", order.getPayment_status())
+				.withString("order_notes", order.getOrder_notes())
+				.withBoolean("customer_pickup", order.isCustomer_pickup())
 				.withJSON("order", order.getOrder().toString());
 
 		try {

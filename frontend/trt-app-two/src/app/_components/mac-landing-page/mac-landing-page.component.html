@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row space-between product-type">
-        <div> <a href="#">Foundation</a></div>
+        <div> <a href="#" (click)='getProducts("foundation")'>Foundation</a></div>
         <div> <a href="#" (click)='getProducts("powder")'>Powder</a></div>
         <div> <a href="#" (click)='getProducts("lipsticks")'>Lipstick</a></div>
         <div> <a href="#" (click)='getProducts("lipgloss")'>Lip gloss</a></div>
@@ -26,7 +26,10 @@
 <div *ngIf="products" class="container">
     <div class="row space-between">
         <div *ngFor="let item of products;let i = index" class="product-list-row">
-            <img (click)="productDetails(content, item)" class="product-lg-img cur-pointer" [src]="item.large_image_url" alt="">
+            <div class="t-al-c">
+                <img (click)="productDetails(content, item)" class="product-lg-img cur-pointer" [src]="item.large_image_url" alt="">
+
+            </div>
 
             <div (click)="productDetails(content, item)" class="product-details cur-pointer">
                 <p class="b-b-black">{{item.name}}</p>
@@ -42,7 +45,7 @@
                 <button (click)="addToCart(item)" class="add-to-cart-btn">Add to cart</button>
                 <button (click)="productDetails(content, item)" class="add-to-cart-btn">Quick view</button>
             </div>
-            <div (click)="productDetails(content, item)" class="my-black-layer"></div>
+            <div (click)="productDetails(content, item)" class="black-layer"></div>
 
         </div>
     </div>
@@ -71,7 +74,7 @@
                 <h3>{{qvProductContent.name}}</h3>
             </div>
             <div class="prod-price">
-                <span class="price">TK {{qvProductContent.price}}.00</span>
+                <span class="price f-w-b">TK {{qvProductContent.price}}.00</span>
                 <span class="size">{{qvProductContent.size}}</span>
                 <div class="shade">{{qvProductContent.shade}}</div>
             </div>

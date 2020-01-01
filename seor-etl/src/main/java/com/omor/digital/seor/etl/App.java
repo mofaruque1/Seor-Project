@@ -15,13 +15,14 @@ public class App {
 		String baseFilePath = "/Users/mdomor.faruque/eclipse-workspace-2/data/mac/";
 
 		Map<String, String> pathAndType = new HashMap<String, String>();
-		pathAndType.put("assorted.txt", "assorted");
-		pathAndType.put("lipsticks.txt", "lipsticks");
-		pathAndType.put("lipgloss.txt", "lipgloss");
-		pathAndType.put("powder.txt", "powder");
-		pathAndType.put("mascara.txt", "mascara");
-		pathAndType.put("eyelash.txt", "eyelash");
-		pathAndType.put("concealer.txt", "concealer");
+//		pathAndType.put("assorted.txt", "assorted");
+//		pathAndType.put("lipsticks.txt", "lipsticks");
+//		pathAndType.put("lipgloss.txt", "lipgloss");
+//		pathAndType.put("powder.txt", "powder");
+//		pathAndType.put("mascara.txt", "mascara");
+//		pathAndType.put("eyelash.txt", "eyelash");
+//		pathAndType.put("concealer.txt", "concealer");
+		pathAndType.put("foundation.txt", "foundation");
 		
 		Set<String> key = pathAndType.keySet();
 		

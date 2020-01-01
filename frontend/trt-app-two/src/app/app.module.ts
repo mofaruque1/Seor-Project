@@ -16,6 +16,7 @@ import { BannerComponent } from './_components/banner/banner.component';
 import { ErrorPageComponent } from './_components/error-page/error-page.component';
 import { MacLandingPageComponent } from './_components/mac-landing-page/mac-landing-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import { MacLandingPageComponent } from './_components/mac-landing-page/mac-land
     FooterComponent,
     BannerComponent,
     ErrorPageComponent,
-    MacLandingPageComponent
+    MacLandingPageComponent,
   ],
   imports: [
     BrowserModule,

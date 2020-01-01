@@ -10,6 +10,12 @@
     }
   }
 
+  @media (max-width:899.98px) {
+    & div{
+      margin: 5px 20px;
+    }
+}
+
   .dropbtn {
     background-color: #fff;
     text-transform: uppercase;
@@ -27,7 +33,8 @@
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    // box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #c7c7c7;
     z-index: 1;
     font-family: 'Roboto Mono';
     right: 0px;
@@ -60,6 +67,8 @@
   border: 1px solid #c7c7c7;
   margin: 35px 0;
   position: relative;
+  padding: 5px;
+  font-size: 15px;
 }
 
 .product-lg-img {
@@ -93,7 +102,12 @@
   right: 20px;
   font-family: 'Roboto Mono';
 }
-
+.abs-top-left {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: 'Roboto Mono';
+}
 .add-tocart-btn-box {
   position: absolute;
   top: 50%;
@@ -109,7 +123,7 @@
     border: none;
     margin: 10px;
     cursor: pointer;
-    width: 200px;
+    width: 200px; //width: 250px; for Quick view | More Shades (when more shades available)
     font-size: 14px;
     display: none;
   }
@@ -118,7 +132,7 @@
 
 
 
-.my-black-layer {
+.black-layer {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -131,7 +145,7 @@
 }
 
 .product-list-row:hover .add-to-cart-btn,
-.product-list-row:hover .my-black-layer {
+.product-list-row:hover .black-layer {
   display: block;
 }
 
@@ -148,6 +162,12 @@
     width: calc(50% - 30px);
     display: inline-block;
     padding: 15px;
+    @media (max-width:599.98px) {
+      & {
+        width: 100%;
+        
+      }
+  }
 
     .main-image {
       animation-name: imageAnim;
@@ -200,6 +220,14 @@
     vertical-align: top;
     padding-top: 50px;
     margin-left: 20px;
+
+    @media (max-width:599.98px) {
+      & {
+        width: 100%;
+        margin-left: 10px;
+        margin-bottom: 10px;
+      }
+  }
 
     .modal-close {
       position: absolute;

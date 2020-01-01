@@ -6,7 +6,8 @@ import { LandingpageComponent } from './components/landingpage/landingpage.compo
 
 const routes: Routes = [
   {path:'',component:LandingpageComponent},
-  {path:'viewbag',component:ViewbagComponent}
+  {path:'viewbag',component:ViewbagComponent},
+  {path:'helper',loadChildren:()=>import('./modules/helper/helper.module').then(mod => mod.HelperModule)}
 ];
 
 @NgModule({
