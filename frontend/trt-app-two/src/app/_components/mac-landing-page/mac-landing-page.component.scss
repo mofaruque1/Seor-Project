@@ -3,6 +3,17 @@
   font-size: 17px;
   padding: 17px 0;
   font-family: 'Roboto Mono';
+
+  // & div{
+    
+  // }
+
+  @media (max-width:599.98px) {
+    & {
+      font-size: 14px;
+    }
+  }
+
   & a {
     color: #000000;
     &:hover {
@@ -11,10 +22,15 @@
   }
 
   @media (max-width:899.98px) {
-    & div{
+    & div {
       margin: 5px 20px;
+      flex: 0 0 35%;
     }
-}
+
+    & .dropbtn{
+      margin-left: -9px;
+    }
+  }
 
   .dropbtn {
     background-color: #fff;
@@ -26,19 +42,25 @@
   .dropdown {
     position: relative;
     display: inline-block;
+
+    & .dropdown-icon {
+      width: 12px;
+      margin-top: -3px;
+      margin-left: -2px;
+    }
   }
 
   .dropdown-content {
-    display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    // box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid #c7c7c7;
     z-index: 1;
     font-family: 'Roboto Mono';
+   @media(min-width:900px) {
     right: 0px;
-
+    top: 43px;
+   }
   }
 
   .dropdown-content a {
@@ -51,10 +73,6 @@
   .dropdown-content a:hover {
     background-color: #000000;
     color: white;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
   }
 
 }
@@ -102,12 +120,14 @@
   right: 20px;
   font-family: 'Roboto Mono';
 }
+
 .abs-top-left {
   position: absolute;
   top: 10px;
   left: 20px;
   font-family: 'Roboto Mono';
 }
+
 .add-tocart-btn-box {
   position: absolute;
   top: 50%;
@@ -116,6 +136,7 @@
   font-family: 'Roboto Mono';
   z-index: 2;
   text-align: center;
+
   .add-to-cart-btn {
     padding: 10px;
     background-color: black;
@@ -162,12 +183,13 @@
     width: calc(50% - 30px);
     display: inline-block;
     padding: 15px;
+
     @media (max-width:599.98px) {
       & {
         width: 100%;
-        
+
       }
-  }
+    }
 
     .main-image {
       animation-name: imageAnim;
@@ -227,7 +249,7 @@
         margin-left: 10px;
         margin-bottom: 10px;
       }
-  }
+    }
 
     .modal-close {
       position: absolute;

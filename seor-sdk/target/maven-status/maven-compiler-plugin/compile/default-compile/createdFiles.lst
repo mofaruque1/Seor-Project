@@ -1,6 +1,6 @@
 com/omor/digital/sdk/model/User.class
-com/omor/digital/sdk/BaseSDK.class
 com/omor/digital/sdk/SEORClient$Builder.class
+com/omor/digital/sdk/BaseSDK.class
 com/omor/digital/sdk/model/OrderStatus.class
 com/omor/digital/sdk/utils/Utils.class
 com/omor/digital/sdk/CustomerSDK.class

@@ -99,6 +99,15 @@ public class SEOROrder {
 		this.shipping_cost = shipping_cost;
 	}
 	
+	@JsonProperty("totalcost_with_shipping")
+	public double getTotalcost_with_shipping() {
+		return totalcost_with_shipping;
+	}
+	public void setTotalcost_with_shipping(double totalcost_with_shipping) {
+		this.totalcost_with_shipping = totalcost_with_shipping;
+	}
+	
+	
 	@JsonProperty("status")
 	public String getStatus() {
 		return status;
@@ -107,13 +116,13 @@ public class SEOROrder {
 		this.status = status;
 	}
 	
-	@JsonProperty("payment_status")
-	public String getPayment_status() {
-		return payment_status;
-	}
-	public void setPayment_status(String payment_status) {
-		this.payment_status = payment_status;
-	}
+//	@JsonProperty("payment_option")
+//	public String getPayment_option() {
+//		return payment_option;
+//	}
+//	public void setPayment_option(String payment_option) {
+//		this.payment_option = payment_option;
+//	}
 	
 	@JsonProperty("order")
 	public JsonNode getOrder() {
@@ -131,21 +140,21 @@ public class SEOROrder {
 		this.order_notes = order_notes;
 	}
 	
-	@JsonProperty("bkash_transaction_id")
-	public String getBkash_transaction_id() {
-		return bkash_transaction_id;
-	}
-	public void setBkash_transaction_id(String bkash_transaction_id) {
-		this.bkash_transaction_id = bkash_transaction_id;
-	}
+//	@JsonProperty("bkash_transaction_id")
+//	public String getBkash_transaction_id() {
+//		return bkash_transaction_id;
+//	}
+//	public void setBkash_transaction_id(String bkash_transaction_id) {
+//		this.bkash_transaction_id = bkash_transaction_id;
+//	}
 	
-	@JsonProperty("payement_processing_corp")
-	public String getPayement_processing_corp() {
-		return payement_processing_corp;
-	}
-	public void setPayement_processing_corp(String payement_processing_corp) {
-		this.payement_processing_corp = payement_processing_corp;
-	}
+//	@JsonProperty("payement_processing_corp")
+//	public String getPayement_processing_corp() {
+//		return payement_processing_corp;
+//	}
+//	public void setPayement_processing_corp(String payement_processing_corp) {
+//		this.payement_processing_corp = payement_processing_corp;
+//	}
 	
 	@JsonProperty("customer_pickup")
 	public boolean isCustomer_pickup() {
@@ -154,6 +163,14 @@ public class SEOROrder {
 	public void setCustomer_pickup(boolean customer_pickup) {
 		this.customer_pickup = customer_pickup;
 	}
+	
+//	@JsonProperty("payment_option_amount")
+//	public String getPayment_option_amount() {
+//		return payment_option_amount;
+//	}
+//	public void setPayment_option_amount(String payment_option_amount) {
+//		this.payment_option_amount = payment_option_amount;
+//	}
 	
 	public static SEOROrder createObjectFromjsonString(String jsonString) {
 		System.out.println(jsonString.toString());
@@ -171,9 +188,11 @@ public class SEOROrder {
 		this.customer_name = "n/a";
 		this.discount_amount = 0;
 		this.timestamp = new Date().toString();
-		this.bkash_transaction_id = "no id entered";
+//		this.bkash_transaction_id = "no id entered";
 		this.order_notes = "n/a";
 		this.customer_pickup = false;
+//		this.payment_option = "50%";
+//		this.payement_processing_corp = "n/a";
 	}
 	
 	private String customer_name;
@@ -186,11 +205,18 @@ public class SEOROrder {
 	private double total_product_cost;
 	private double discount_amount;
 	private double shipping_cost;
-	private String bkash_transaction_id;
-	private String payement_processing_corp;
+	private double totalcost_with_shipping;
+
+
+	//	private String bkash_transaction_id;
+//	private String payement_processing_corp;
 	private String order_notes;
 	private boolean customer_pickup;
+	
+	
+
 	private String status;
-	private String payment_status;
+//	private String payment_option;
+//	private String payment_option_amount;
 	private JsonNode order;
 }

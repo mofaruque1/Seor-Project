@@ -19,6 +19,7 @@ export class MacLandingPageComponent implements OnInit {
   baseImageurl: string = "https://www.maccosmetics.ca";
   largeImage: string;
   activeThumb: number;
+  showMore:boolean;
 
   userCart: Observable<Cart>;
 
@@ -32,9 +33,10 @@ export class MacLandingPageComponent implements OnInit {
   ngOnInit() {
     //localStorage.removeItem('order'); //reset
     this.getProducts("assorted");
+    this.showMore = false;
   }
 
-  private getProducts(productType: string) {
+ getProducts(productType: string) {
     this.productService.getMacProduct(productType).subscribe((res) => {
       this.products = res;
       let length = this.products.length;

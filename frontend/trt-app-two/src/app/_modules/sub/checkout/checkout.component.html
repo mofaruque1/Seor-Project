@@ -1,6 +1,5 @@
 <div class="container m-b-25">
-    <div class="row">
-
+    <div class="row" *ngIf="(userCart | async).noOfItem">
         <div class="checkout-flx-box  m-t-25 m-b-25">
             <div class="order-submit-form">
                 <h4 class="l-s-1 m-t-25 nanum-gothic">SHIPPING</h4>
@@ -18,12 +17,13 @@
                         <label for="email"></label>
                         <input type="email" name="email" id="email" placeholder="Your Email (Optional)" #c_email />
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="s_address"></label>
-                        <input [disabled]="pickupSelected" type="text" name="s_address" id="s_address" placeholder="*Shipping address (only inside Dhaka, Bangladesh)" #c_address /><br>
-                        <input type="checkbox" name="pickup_loc" value="pickup" [(ngModel)]='pickupSelected'> Or you can pickup from House no 124, Uttara, Dhaka
-                       
+                        <input [disabled]="pickupSelected" type="text" name="s_address" id="s_address" placeholder="*Shipping address (only inside Dhaka, Bangladesh)"
+                            #c_address />
+                        <br>
+                        <input type="checkbox" name="pickup_loc" value="pickup" [(ngModel)]='pickupSelected'> Or pickup from House no 124, Uttara, Dhaka
                     </div>
 
                     <div class="form-group">
@@ -34,50 +34,57 @@
                         <div class="order-copy-title">Payment Option</div>
 
                         <div class="radio-item">
-                            <input type="radio" id="ritema" name="ritem" value="50%" checked (change)="paymentOptionClicked('50%')">
+                            <input type="radio" id="ritema" name="ritem" value="0%" checked (change)="paymentOptionClicked('0%')">
                             <label for="ritema"></label>
-                            <span>Pay 50% of the total amount, TK {{Math.ceil((userCart | async).totalCostWithShipping / 2)}}.00</span>
+                            <span>Pay <b>TK {{(userCart | async).totalCostWithShipping}}.00</b> on delivery</span>
+                        </div>
+                        <!-- <div class="radio-item">
+                            <input type="radio" id="ritema" name="ritem" value="50%" checked
+                                (change)="paymentOptionClicked('50%')">
+                            <label for="ritema"></label>
+
+                            <span>Pay 50% of the total amount, TK
+                                {{Math.ceil((userCart | async).totalCostWithShipping / 2)}}.00</span>
+                            <div class="on-dlvr-info">(Rest on delivery)</div>
                         </div>
                         <div class="radio-item">
-                            <input type="radio" id="ritemb" name="ritem" value="100%" (change)="paymentOptionClicked('100%')">
+                            <input type="radio" id="ritemb" name="ritem" value="100%"
+                                (change)="paymentOptionClicked('100%')">
                             <label for="ritemb"></label>
-                            <span>Pay 100% of the total amount, TK {{(userCart | async).totalCostWithShipping}}.00</span>
-                        </div>
+                            <span>Pay 100% of the total amount, TK
+                                {{(userCart | async).totalCostWithShipping}}.00</span>
+                        </div> -->
                     </div>
                     <div class="form-group form-button">
-                        <input type="button" name="signup" id="signup" class="form-submit submit-btn"
-                            value="CONTINUE TO PAYMENT" (click)='continueToPaymentClicked(c_name.value,c_phoneno.value,c_email.value,c_address.value, c_notes.value)'/>
+                        <input type="button" name="signup" id="signup" class="form-submit submit-btn" value="SUBMIT ORDER" (click)='submitOrderClicked(c_name.value,c_phoneno.value,c_email.value,c_address.value, c_notes.value)'
+                        />
                         <p *ngIf="missingNameOrPhoneNo" class="c-red">* Missing Customer name or phone no</p>
-                        <p *ngIf="missingShippingAddress" class="c-red">* Provide shipping address or select pickup option</p>
+                        <p *ngIf="missingShippingAddress" class="c-red">* Provide shipping address or select pickup option
+                        </p>
                     </div>
                 </form>
             </div>
 
-            <section  class="guarantee-panel">
+            <section class="guarantee-panel">
                 <header>
                     <h3 class="guarantee-panel__title nanum-gothic m-t-25">Our Guarantee</h3>
                 </header>
-    
+
                 <div class="content rob-mono f-14">
-                    <p> We guaranttee the authenticity of the products. If anyone say otherwise and can prove the product is a replica or fake, we will reimburse double the money.</p>
+                    <p> We guaranttee the authenticity of the products. If anyone say otherwise and can prove the product is
+                        a replica or fake, we will reimburse double the money.</p>
                 </div>
             </section>
-
-
-
         </div>
-
-
-
         <div class="checkout-flx-box">
             <div class="cart-products">
                 <div class="display-flex f-w-b space-between m-b-30">
                     <div>ORDER SUMMARY</div>
                 </div>
                 <div class="cart-item-container">
-                    <div *ngFor="let item of (userCart | async).order;let i =index;"
-                        class="display-flex space-between t-al-l">
-                        <div><img [src]="baseImageUrl + item.small_image_url" class="m-l-20 m-0-899" width="100" alt="">
+                    <div *ngFor="let item of (userCart | async).order;let i =index;" class="display-flex space-between t-al-l">
+                        <div>
+                            <img [src]="baseImageUrl + item.small_image_url" class="m-l-20 m-0-899" width="100" alt="">
                         </div>
                         <div class="c-b op-1 cart-item">
                             <p>{{item.name}}</p>
@@ -101,11 +108,32 @@
                     <div class="cur-pointer">TK {{(userCart | async).totalCostWithShipping}}.00</div>
                 </div>
             </div>
+        </div>
+    </div>
 
+    <div class="row pos-relative h-500" *ngIf="!(userCart | async).noOfItem">
+        <div class="t-al-c abs-center w-100-p rob-mono">
+            <h3>Your cart is empty</h3>
+            <p>Load up the basket with some original</p>
+            <button routerLink='/' class="btn-bg-b m-t-10">START SHOPPING</button>
         </div>
 
-
-
-
     </div>
+
+    <!-- <div *ngIf="readyForPayment" class="checkout-flx-box  m-t-25 m-b-25">
+            <div class="payment-info">
+                <div class="l-s-1 m-t-25 nanum-gothic">CHECKOUT WITH
+                    <img class="bkash-logo" src="assets/images/bkash-logo.png" alt="">
+                </div>
+                <div class="m-t-25 rob-mono bkash-payment-steps">
+                    <p>1. Go to bKash Menu by dialing *247#</p>
+                    <p>2. Choose 'Send Money' option by pressing '1'</p>
+                    <p>3. Enter our Merchant bkash number : 01984-536-XXX</p>
+                    <p>4. Enter BDT. amount {{orderDetails.payment_option_amount}}.00</p>
+                    <p>5. Enter a reference: 'Your phone number'</p>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div> -->
 </div>

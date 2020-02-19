@@ -4,11 +4,11 @@ com/omor/digital/base/api/TestContext$TestLogger.class
 com/omor/digital/base/api/TestContext.class
 com/omor/digital/base/api/TestUtils$UpperCaseRecordsPropertyNamingStrategy.class
 com/omor/digital/base/api/TestUtils$DynamodbEventMixin.class
-com/omor/digital/base/api/TestUtils$DynamodbEventMixin$AttributeValueMixIn.class
 com/omor/digital/base/api/TestUtils$TestJacksonMapperModule.class
+com/omor/digital/base/api/TestUtils$DynamodbEventMixin$AttributeValueMixIn.class
 com/omor/digital/base/api/TestUtils$DynamodbEventMixin$RecordMixin.class
 com/omor/digital/base/api/TestUtils$1.class
 com/omor/digital/base/api/TestUtils$DateTimeDeserializer.class
-com/omor/digital/base/api/RequestStreamLambdaHandlerTest.class
 com/omor/digital/base/api/TestUtils$DateTimeSerializer.class
+com/omor/digital/base/api/RequestStreamLambdaHandlerTest.class
 com/omor/digital/base/api/TestContext$1.class

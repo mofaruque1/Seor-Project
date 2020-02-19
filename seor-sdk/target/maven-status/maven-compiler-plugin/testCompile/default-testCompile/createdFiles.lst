@@ -9,5 +9,5 @@ com/omor/digital/sdk/TestUtils$TestJacksonMapperModule.class
 com/omor/digital/sdk/TestUtils$DynamodbEventMixin$AttributeValueMixIn.class
 com/omor/digital/sdk/TestContext$TestLogger.class
 com/omor/digital/sdk/TestUtils$DynamodbEventMixin.class
-com/omor/digital/sdk/TestContext$1.class
 com/omor/digital/sdk/TestContext.class
+com/omor/digital/sdk/TestContext$1.class

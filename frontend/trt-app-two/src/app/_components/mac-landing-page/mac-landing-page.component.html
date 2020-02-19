@@ -1,21 +1,33 @@
 <div class="container">
     <div class="row space-between product-type">
-        <div> <a href="#" (click)='getProducts("foundation")'>Foundation</a></div>
-        <div> <a href="#" (click)='getProducts("powder")'>Powder</a></div>
-        <div> <a href="#" (click)='getProducts("lipsticks")'>Lipstick</a></div>
-        <div> <a href="#" (click)='getProducts("lipgloss")'>Lip gloss</a></div>
-        <div> <a href="#">Makeup Primer</a></div>
-        <div> <a href="#" (click)='getProducts("concealer")'>Concealer</a></div>
-        <div class="dropdown"> 
-            <button class="dropbtn">More</button>
-            <div class="dropdown-content">
+        <div>
+            <a href="#" (click)='getProducts("foundation")'>Foundation</a>
+        </div>
+        <div>
+            <a href="#" (click)='getProducts("powder")'>Powder</a>
+        </div>
+        <div>
+            <a href="#" (click)='getProducts("lipsticks")'>Lipstick</a>
+        </div>
+        <div>
+            <a href="#" (click)='getProducts("lipgloss")'>Lip gloss</a>
+        </div>
+        <div>
+            <a href="#">Makeup Primer</a>
+        </div>
+        <div>
+            <a href="#" (click)='getProducts("concealer")'>Concealer</a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" (click)="showMore= !showMore">More <img class="dropdown-icon" [ngClass]="{'rotate-180': showMore}" src="assets/images/down-arrow.png" alt=""> </button>
+            <div *ngIf="showMore" class="dropdown-content">
                 <a href="#">Primer</a>
                 <a href="#" (click)='getProducts("mascara")'>Mascara</a>
                 <a href="#" (click)='getProducts("eyelash")'>Eyelash</a>
                 <a href="#">Blush</a>
                 <a href="#">Eyebrow</a>
                 <a href="#">Lip Liner</a>
-              </div>
+            </div>
         </div>
     </div>
 </div>
@@ -58,10 +70,10 @@
             <div class="main-image">
                 <img src="{{largeImage}}" class="img-fluid" />
             </div>
-            <div class="thumb-image">  
+            <div class="thumb-image">
                 <ul class="thumb-list">
                     <li *ngFor="let quickviewimage of qvProductContent.quick_view_images; let n = index" [ngClass]="{active: isActive(n)}" (click)="changeImage(quickviewimage, n)">
-                        <img src="{{baseImageurl}}{{quickviewimage}}" class="img-fluid" width="50px"  onerror="this.style.display='none'" />
+                        <img src="{{baseImageurl}}{{quickviewimage}}" class="img-fluid" width="50px" onerror="this.style.display='none'" />
                     </li>
                 </ul>
             </div>

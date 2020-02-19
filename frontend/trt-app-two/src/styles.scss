@@ -160,6 +160,10 @@ a,
     letter-spacing: 1px;
 }
 
+.w-100-p{
+    width: 100%;
+}
+
 .rob-mono {
     font-family: 'Roboto Mono';
     letter-spacing: 0;
@@ -180,13 +184,33 @@ a,
     text-decoration: underline;
 }
 
-
 @media(max-width:899.99px){
     .m-0-899{
         margin: 0;
     }
 }
-
 .c-red{
     color: red;
+}
+
+.rotate-180{
+    transform: rotate(180deg);
+}
+
+.abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.h-500{
+    height: 500px;
+}
+
+.btn-bg-b{
+    background-color: #000;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    border: #000;
 }

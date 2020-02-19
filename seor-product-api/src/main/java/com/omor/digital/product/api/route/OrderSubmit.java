@@ -55,9 +55,9 @@ public class OrderSubmit {
 		
 		
 		
-		if (seorOrder.getPayment_status()==null || seorOrder.getPayment_status().trim().equals("")) {
-			throw new InvalidArgumentException("Payment status missing");
-		}
+//		if (seorOrder.getPayment_option()==null || seorOrder.getPayment_option().trim().equals("")) {
+//			throw new InvalidArgumentException("Payment status missing");
+//		}
 		
 		
 		boolean orderSubmitted = productSDK.submitOrder(seorOrder);
