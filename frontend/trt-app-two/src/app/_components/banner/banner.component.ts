@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BannerComponent implements OnInit {
 
   @Input() imageUrl: string = 'assets/images/default_banner.png';
+  @Input() bannerText : string = 'MAC BD';
   constructor() { }
 
   ngOnInit() {

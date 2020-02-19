@@ -137,6 +137,10 @@ a,
 .p-t-10{
     padding-top: 10px;
 }
+
+.p-r-20{
+    padding-right: 20px;
+}
 .m-b-25 {
     margin-bottom: 25px;
 }
@@ -193,6 +197,10 @@ a,
     color: red;
 }
 
+.c-white{
+    color: #fff;
+}
+
 .rotate-180{
     transform: rotate(180deg);
 }
@@ -213,4 +221,7 @@ a,
     cursor: pointer;
     color: white;
     border: #000;
+}
+.t-t-upper{
+    text-transform: uppercase;
 }

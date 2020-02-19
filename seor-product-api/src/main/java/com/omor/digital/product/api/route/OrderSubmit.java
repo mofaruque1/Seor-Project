@@ -36,32 +36,38 @@ public class OrderSubmit {
 			System.out.printf("invalid request payload.", e);
 			throw new InvalidArgumentException("invalid request payload. " + e.getMessage());
 		}
-		
+
 		if (seorOrder.getEmail() == null || seorOrder.getEmail().trim().equals("")) {
 			seorOrder.setEmail("n/a");
 			seorOrder.setOrder_id(seorOrder.getPhone());
 		}
-		
-		if (seorOrder.getShipping_address() == null
-				|| seorOrder.getShipping_address().trim().equals("")) {
+
+		if (seorOrder.getOrder_notes() == null || seorOrder.getOrder_notes().trim().equals("")) {
+			seorOrder.setOrder_notes("n/a");
+		}
+
+		if (seorOrder.getShipping_address() == null || seorOrder.getShipping_address().trim().equals("")) {
 			System.out.printf("Customer email or address is missing.");
-			throw new InvalidArgumentException("Customer Email or address is missing");
+
+			if (seorOrder.isCustomer_pickup()) {
+				seorOrder.setShipping_address("n/a");
+			} else {
+				throw new InvalidArgumentException("Customer Email or address is missing");
+			}
+			
 		}
 
 		if (seorOrder.getPhone() == null || seorOrder.getPhone().trim().equals("")) {
 			System.out.printf("Customer phone no is missing.");
 			throw new InvalidArgumentException("Customer phone no is missing");
 		}
-		
-		
-		
+
 //		if (seorOrder.getPayment_option()==null || seorOrder.getPayment_option().trim().equals("")) {
 //			throw new InvalidArgumentException("Payment status missing");
 //		}
-		
-		
+
 		boolean orderSubmitted = productSDK.submitOrder(seorOrder);
-		
+
 		if (!orderSubmitted) {
 			throw new InvalidArgumentException("Something went wrong while submitting order");
 		}

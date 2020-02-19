@@ -55,6 +55,16 @@ class Helper {
         localStorage.setItem('order', JSON.stringify(state.order));
         return state;
     }
+
+    public static removeAllFromCart(state: Cart): Cart {
+        state.noOfItem = 0;
+        state.totalPrice = 0;
+        state.totalCostWithShipping = 0;
+        let newOrder: any[] = [];
+        state.order = newOrder;
+        localStorage.setItem('order', JSON.stringify(state.order));
+        return state;
+    }
 }
 
 const initialState: Cart = {
@@ -76,6 +86,8 @@ export function cartReducer(state: Cart = initialState, action: CartActions.Acti
             return Helper.addToCart(state, action.payload);
         case CartActions.REMOVE_FROM_CART:
             return Helper.removeFromCart(state, action.payload);
+        case CartActions.REMOVE_ALL_FROM_CART:
+            return Helper.removeAllFromCart(state);
         default:
             return state;
     }

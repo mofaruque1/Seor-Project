@@ -6,6 +6,7 @@ import { AppState } from 'src/app/app.state';
 import * as CartActions from "../../../_actions/cart.actions";
 import { Order } from 'src/app/_models/order.model';
 import { ProductService } from 'src/app/_services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -25,7 +26,7 @@ export class CheckoutComponent implements OnInit {
   readyForPayment:boolean;
 
   baseImageUrl: string = 'https://www.maccosmetics.ca';
-  constructor(private productService: ProductService,private store: Store<AppState>) {
+  constructor(private productService: ProductService,private store: Store<AppState>,private router: Router) {
     this.userCart = store.select('cart');
     this.Math = Math;
   }
@@ -91,13 +92,18 @@ export class CheckoutComponent implements OnInit {
       console.log("|--------Order Submit---------|");
       console.log(res);
 
+      this.removeAllItem();
+      this.router.navigate(['/sub/order-success']);
+
     },
       (error) => {
         console.log("SOmething went wrong " + error.message);
       })
   }
 
-
+  removeAllItem() {
+    this.store.dispatch(new CartActions.RemoveAllFromCart());
+  }
   paymentOptionClicked(paymentOption: string) {
     this.paymentOption = paymentOption;
   }

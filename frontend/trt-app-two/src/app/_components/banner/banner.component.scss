@@ -59,6 +59,16 @@
     font-size: 2rem;
 }
 
+.product-type{
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Roboto Slab';
+    letter-spacing: 20px;
+}
+
+
+
 /* [START] Media rules  */
 @media (max-width: 959px) {
     .banner-text-box h1{
@@ -86,5 +96,9 @@
     
     .banner-text-box p {
         font-size: 1.8rem;
+    }
+    .product-type{
+        font-size: 30px;
+    
     }
 }

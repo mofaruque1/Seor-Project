@@ -186,6 +186,7 @@ public class SEOROrder {
 	public SEOROrder() {
 		this.phone = "n/a";
 		this.customer_name = "n/a";
+		this.shipping_address = "n/a";
 		this.discount_amount = 0;
 		this.timestamp = new Date().toString();
 //		this.bkash_transaction_id = "no id entered";

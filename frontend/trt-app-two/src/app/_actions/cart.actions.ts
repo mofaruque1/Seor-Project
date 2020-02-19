@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store'
 export const ADD_TO_CART = '[CART] Add'
 export const REMOVE_FROM_CART = '[CART] Remove'
+export const REMOVE_ALL_FROM_CART = '[CART] Remove all'
 
 
 export class AddToCart implements Action {
@@ -13,4 +14,8 @@ export class RemoveFromCart implements Action {
     constructor(public payload:number){} 
 }
 
-export type Actions = AddToCart | RemoveFromCart
+export class RemoveAllFromCart implements Action {
+    readonly type = REMOVE_ALL_FROM_CART;
+}
+
+export type Actions = AddToCart | RemoveFromCart | RemoveAllFromCart

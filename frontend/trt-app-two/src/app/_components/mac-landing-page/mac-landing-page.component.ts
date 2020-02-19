@@ -20,6 +20,7 @@ export class MacLandingPageComponent implements OnInit {
   largeImage: string;
   activeThumb: number;
   showMore:boolean;
+  bannerText:string;
 
   userCart: Observable<Cart>;
 
@@ -37,6 +38,7 @@ export class MacLandingPageComponent implements OnInit {
   }
 
  getProducts(productType: string) {
+   this.bannerText = productType == "assorted" ? "MAC BD" : productType;
     this.productService.getMacProduct(productType).subscribe((res) => {
       this.products = res;
       let length = this.products.length;
